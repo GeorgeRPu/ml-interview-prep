@@ -16,6 +16,6 @@ documentation for details.
    :caption: Contents:
 
    ml-coding
-   ml-breadth
+   ml-breadth/index
    ml-system-design
 
