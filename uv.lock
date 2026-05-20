@@ -252,6 +252,7 @@ dependencies = [
     { name = "myst-parser" },
     { name = "pydata-sphinx-theme" },
     { name = "sphinx" },
+    { name = "sphinx-proof" },
 ]
 
 [package.metadata]
@@ -259,6 +260,7 @@ requires-dist = [
     { name = "myst-parser", specifier = ">=5.1.0" },
     { name = "pydata-sphinx-theme", specifier = ">=0.16.1" },
     { name = "sphinx", specifier = ">=9.1.0" },
+    { name = "sphinx-proof", specifier = ">=0.4.0" },
 ]
 
 [[package]]
@@ -418,6 +420,33 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/cd/bd/f08eb0f4eed5c83f1ba2a3bd18f7745a2b1525fad70660a1c00224ec468a/sphinx-9.1.0.tar.gz", hash = "sha256:7741722357dd75f8190766926071fed3bdc211c74dd2d7d4df5404da95930ddb", size = 8718324, upload-time = "2025-12-31T15:09:27.646Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/73/f7/b1884cb3188ab181fc81fa00c266699dab600f927a964df02ec3d5d1916a/sphinx-9.1.0-py3-none-any.whl", hash = "sha256:c84fdd4e782504495fe4f2c0b3413d6c2bf388589bb352d439b2a3bb99991978", size = 3921742, upload-time = "2025-12-31T15:09:25.561Z" },
+]
+
+[[package]]
+name = "sphinx-book-theme"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydata-sphinx-theme" },
+    { name = "sphinx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/eb/f7/154786f3cfb7692cd7acc24b6dfe4dcd1146b66f376b17df9e47125555e9/sphinx_book_theme-1.2.0.tar.gz", hash = "sha256:4a7ebfc7da4395309ac942ddfc38fbec5c5254c3be22195e99ad12586fbda9e3", size = 443962, upload-time = "2026-03-09T23:20:30.442Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/02/bf/6f506a37c7f8ecc4576caf9486e303c7af249f6d70447bb51dde9d78cb99/sphinx_book_theme-1.2.0-py3-none-any.whl", hash = "sha256:709605d308e1991c5ef0cf19c481dbe9084b62852e317fafab74382a0ee7ccfa", size = 455936, upload-time = "2026-03-09T23:20:28.788Z" },
+]
+
+[[package]]
+name = "sphinx-proof"
+version = "0.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "docutils" },
+    { name = "sphinx" },
+    { name = "sphinx-book-theme" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a1/8a/1efc6f894aca0dd695e6679a529f7a19d5ff69c069b57d137e634ba90765/sphinx_proof-0.4.0.tar.gz", hash = "sha256:43c7c62f0138444b22b4b85c6a1b90cebbad9cc8d09dc313d1e87d37e16558c0", size = 28992, upload-time = "2026-01-27T09:45:14.929Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a6/7a/d3397a28c21cc3981de5fb26910b1f0b8821152dcfdba1737388edbe7864/sphinx_proof-0.4.0-py3-none-any.whl", hash = "sha256:7781d533a56a6fa5cf4b1d79564b0a0f05493e45dedfcfa5de1ae5a7bd0c9ecd", size = 52630, upload-time = "2026-01-27T09:45:13.625Z" },
 ]
 
 [[package]]

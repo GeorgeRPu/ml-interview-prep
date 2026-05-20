@@ -13,7 +13,7 @@ author = 'George Pu'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser"]
+extensions = ["myst_parser", "sphinx_proof"]
 
 myst_enable_extensions = ["dollarmath", "amsmath"]
 
@@ -22,6 +22,15 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+mathjax3_config = {
+    "tex": {
+        "macros": {
+            "argmin": "\\operatorname*{arg\\,min}",
+            "argmax": "\\operatorname*{arg\\,max}",
+        }
+    }
+}
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
