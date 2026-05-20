@@ -14,8 +14,12 @@ $$
 
 for all $t_1, t_2, ..., t_k$ and for all $h$.
 
+Examples of strictly stationary processes:
+- **White noise**: A sequence of iid normal random variables $X_t \sim \mathcal{N}(0, \sigma^2)$. Since draws are independent and identically distributed, the joint distribution is trivially shift-invariant.
+- **Coin flip sequences**: Repeated fair coin flips encoded as $\{+1, -1\}$. Each flip is iid Bernoulli, so the full joint distribution is shift-invariant.
+
 A weaker form of stationarity is called **weak stationarity** or
-**second-order stationarity**, which requires that the mean and autocovariance
+**wide-sense stationarity**, which requires that the mean and autocovariance
 of the process are constant over time, and that the variance is finite.
 
 $$
@@ -26,36 +30,7 @@ K_{XX}(t_1, t_2) &= K_{XX}(t_2 - t_1, 0) \quad &&\text{for all } t_1, t_2 \\
 \end{aligned}
 $$
 
-### Why is stationarity important?
-
-Stationarity is a fundamental assumption in many time series models and
-analyses. If a process is non-stationary, its properties change over time,
-making it more difficult to model and predict.
-
-1. **Estimation from a single realization**: We typically observe one instance
-of a time series. Stationarity lets us treat different time windows as
-"repeated samples" from the same distribution.
-
-2. **Forecasting**: If statistical properties change over time, a model fit on
-historical data won't generalize to the future. Stationarity guarantees that
-the patterns you learned persist.
-
-3. **Theoretical guarantees**: Results like the ergodic theorem (time averages
-converge to ensemble averages) and the Wold decomposition (any stationary
-process = deterministic + $MA(\infty)$) require stationarity.
-
-4. **Model validity**: ARMA models, spectral analysis, and Granger causality
-all assume stationarity. Applying them to non-stationary data produces spurious
-results. A classic example is spurious regression, where two independent
-random walks appear highly correlated simply because both trend upward.
-
-### What are some examples of stationary processes?
-
-Strictly stationary processes:
-- **White noise**: A sequence of iid normal random variables $X_t \sim \mathcal{N}(0, \sigma^2)$. Since draws are independent and identically distributed, the joint distribution is trivially shift-invariant.
-- **Coin flip sequences**: Repeated fair coin flips encoded as $\{+1, -1\}$. Each flip is iid Bernoulli, so the full joint distribution is shift-invariant.
-
-Weakly stationary processes:
+Examples of weakly stationary processes:
 - **AR(1) process**: $X_t = \phi X_{t-1} + \epsilon_t$ where $\epsilon_t$ is white noise and $|\phi| < 1$ for $t \in \mathbb{Z}$. This is the first-order autoregressive process. It is weakly stationary because
   1. $E[X_t] = \sum_{i=0}^{\infty} \phi^i E[\epsilon_i] = 0$. The mean is constant.
   2. Using the infinite sum representation $X_t = \sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}$:
@@ -96,3 +71,28 @@ Weakly stationary processes:
      This is finite, so the condition is satisfied.
 - **MA(q) process**: $X_t = \epsilon_t + \theta_1 \epsilon_{t-1} + ... + \theta_q \epsilon_{t-q}$. Any finite moving average of white noise is always weakly stationary since the mean is zero and autocovariance depends only on lag (and is zero beyond lag $q$).
 - **Daily temperature residuals**: After removing the seasonal trend from daily temperatures, the residuals have approximately constant mean and variance with autocovariance that depends on lag — a classic weakly stationary signal in climate modeling.
+
+## Why is stationarity important?
+
+Stationarity is a fundamental assumption in many time series models and
+analyses. If a process is non-stationary, its properties change over time,
+making it more difficult to model and predict.
+
+1. **Estimation from a single realization**: We typically observe one instance
+of a time series. Stationarity lets us treat different time windows as
+"repeated samples" from the same distribution.
+
+2. **Forecasting**: If statistical properties change over time, a model fit on
+historical data won't generalize to the future. Stationarity guarantees that
+the patterns you learned persist.
+
+3. **Theoretical guarantees**: Results like the ergodic theorem (time averages
+converge to ensemble averages) and the Wold decomposition (any stationary
+process = deterministic + $MA(\infty)$) require stationarity.
+
+4. **Model validity**: ARMA models, spectral analysis, and Granger causality
+all assume stationarity. Applying them to non-stationary data produces spurious
+results. A classic example is spurious regression, where two independent
+random walks appear highly correlated simply because both trend upward.
+
+## What are some examples of stationary processes?
