@@ -1,6 +1,6 @@
 # Autocorrelation
 
-## What is Autocorrelation?
+## What is autocorrelation?
 
 For a time series, autocorrelation is the correlation between a time series and
 a delayed copy.

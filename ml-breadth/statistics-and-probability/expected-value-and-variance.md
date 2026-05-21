@@ -1,6 +1,6 @@
-# Expected Value And Variance
+# Expected Value and Variance
 
-## What Is Expected Value?
+## What is expected value?
 
 The **expected value** is the weighted average of all possible values of a random variable.
 
@@ -26,7 +26,7 @@ $$
 \mathbb{E}[aX + bY] = a\mathbb{E}[X] + b\mathbb{E}[Y]
 $$
 
-## What Are Variance and Standard Deviation?
+## What are variance and standard deviation?
 
 **Variance** measures the spread of a distribution around its mean.
 
@@ -46,7 +46,7 @@ $$
 \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y).
 $$
 
-## What Are Covariance and Correlation?
+## What are covariance and correlation?
 
 **Covariance** measures the joint variability of two random variables.
 

@@ -6,9 +6,9 @@ Suppose we are estimating the percentage of people who plan on voting for Democr
 
 ## How do we construct a confidence interval?
 
-Because $\sqrt{n}(\bar{X} - \mu)$ follows a Normal distribution (for large enough samples, $n > 30$ is the rule of thumb), we can use the properties of the Normal distribution to construct confidence intervals.
+Because the sample mean $\bar{X}$ follows a Normal distribution (for large enough samples, $n > 30$ is the rule of thumb), we can use the properties of the Normal distribution to construct confidence intervals. For small samples ($n \leq 30$), we use Student's t-distribution instead, which accounts for the additional uncertainty from estimating the population standard deviation with the sample standard deviation.
 
-First, let the **critical value** of a $\alpha$-confidence interval be the value $z_{\alpha/2}$ such that the $\Pr(Z > z_{\alpha/2})$ is $\alpha/2$. For a 95% confidence interval, $\alpha = 0.05$ and $z_{\alpha/2} = 1.96$.
+First, let the **critical value** of a $\alpha$-confidence interval be the value $z_{\alpha/2}$ such that the $\Pr(Z > z_{\alpha/2})$ is $\alpha/2$. For a 95% confidence interval, $\alpha = 0.05$ and $z_{\alpha/2} = 1.96$. If we were using the t-distribution instead, we use the critical value $t_{\alpha/2, n-1}$.
 
 Let $\bar{X}$ be the sample mean and $s$ be the sample standard deviation. The 95% confidence interval for the population mean $\mu$ is
 

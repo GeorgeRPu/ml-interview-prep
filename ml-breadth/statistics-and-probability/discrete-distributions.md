@@ -1,5 +1,7 @@
 # Discrete Distributions
 
+## Bernoulli distribution
+
 ````{prf:definition} Bernoulli Distribution
 The **Bernoulli distribution** models a single binary experiment—outcome is 0 or 1—with success probability $p$ ($X = 1$).
 
@@ -15,17 +17,23 @@ $$
 
 ![Bernoulli Distribution](/_static/figures/bernoulli.png)
 
+## Binomial distribution
+
 ````{prf:definition} Binomial Distribution
 The **binomial distribution** counts the number of successes in $n$ independent Bernoulli trials.
 
 $$
-P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} \\
+\begin{aligned}
+P(X = k) &= \binom{n}{k} p^k (1-p)^{n-k} \\
 \mathbb{E}[X] &= np \\
 \text{Var}(X) &= np(1-p)
+\end{aligned}
 $$
 ````
 
 ![Binomial Distribution](/_static/figures/binomial.png)
+
+## Geometric distribution
 
 ````{prf:definition} Geometric Distribution
 The **geometric distribution** counts the number of trials until the first success.
@@ -42,6 +50,8 @@ $$
 The geometric distribution is memoryless: $\Pr(X > m + n \mid X > m) = \Pr(X > n)$.
 
 ![Geometric Distribution](/_static/figures/geometric.png)
+
+## Poisson distribution
 
 ````{prf:definition} Poisson Distribution
 The **Poisson distribution** counts the number of events in a fixed interval, given a rate $\lambda$.

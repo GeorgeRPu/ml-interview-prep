@@ -65,7 +65,7 @@ Examples of weakly stationary processes:
      $$
      \begin{aligned}
      \mathbb{E}[X_t^2] &= \text{Var}(X_t) \\
-     &= \Var\left(\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}\right) \\
+     &= \text{Var}left(\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}\right) \\
      &= \sum_{i=0}^{\infty} \phi^{2i} \text{Var}(\epsilon_{t-i}) \quad \text{(independence of } \epsilon \text{)} \\
      &= \sigma^2 \sum_{i=0}^{\infty} \phi^{2i} \\
      &= \frac{\sigma^2}{1 - \phi^2} \quad \text{(geometric series, converges since } |\phi| < 1 \text{)}
@@ -76,7 +76,7 @@ Examples of weakly stationary processes:
 - **MA(q) process**: $X_t = \epsilon_t + \theta_1 \epsilon_{t-1} + ... + \theta_q \epsilon_{t-q}$. Any finite moving average of white noise is always weakly stationary since the mean is zero and autocovariance depends only on lag (and is zero beyond lag $q$).
 - **Daily temperature residuals**: After removing the seasonal trend from daily temperatures, the residuals have approximately constant mean and variance with autocovariance that depends on lag — a classic weakly stationary signal in climate modeling.
 
-![Daily Temperature Residuals](/_static/figures/daily_temperature_residuals.svg)
+![Daily Temperature Residuals](/_static/figures/daily_temperature_residuals.png)
 *Figure 2: Daily mean temperatures from Central Park, NYC (2021–2023) decomposed into a fitted seasonal component and residuals. After removing the seasonal trend, the residuals have approximately constant mean and variance — a weakly stationary signal.*
 
 ## Why is stationarity important?

@@ -2,10 +2,14 @@ mjx-container[display="true"] {
     margin: 0 !important;
 }
 
+div.math {
+    margin: 0.575rem 0;
+}
+
 p + div.math {
     margin-top: -0.575rem;
 }
 
-div.math + p {
+li > p + div.math {
     margin-top: 0.575rem;
 }

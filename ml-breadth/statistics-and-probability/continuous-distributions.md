@@ -1,5 +1,7 @@
 # Continuous Distributions
 
+## Uniform distribution
+
 ````{prf:definition} Uniform Distribution
 The **uniform distribution** assigns equal probability to all values in $[a, b]$.
 
@@ -11,6 +13,8 @@ $$
 ````
 
 ![Uniform Distribution](/_static/figures/uniform.png)
+
+## Normal (Gaussian) distribution
 
 ````{prf:definition} Normal (Gaussian) Distribution
 The **normal distribution** is a bell-shaped curve defined by its mean $\mu$ and variance $\sigma^2$.
@@ -25,6 +29,8 @@ $$
 The 68-95-99.7 rule says approximately 68%, 95%, and 99.7% of values lie within 1, 2, and 3 standard deviations of the mean.
 
 ![Normal Distribution](/_static/figures/normal.png)
+
+## Exponential distribution
 
 ````{prf:definition} Exponential Distribution
 The **exponential distribution** models the time between events in a Poisson process.

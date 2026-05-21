@@ -1,6 +1,6 @@
 # Basic Probability
 
-## What Is Conditional Probability?
+## What is conditional probability?
 
 ````{prf:definition} Conditional Probability
 The conditional probability $\Pr(A \mid B)$ is the probability of event $A$ given that event $B$ has occurred.
@@ -10,7 +10,7 @@ $$
 $$
 ````
 
-## When Are Two Events Independent?
+## When are two events independent?
 
 Two events $A$ and $B$ are **independent** if the occurrence of one does not affect the probability of the other.
 
@@ -28,7 +28,7 @@ $$
 $$
 ````
 
-## What Is the Chain Rule of Probability?
+## What is the chain rule of probability?
 
 ````{prf:definition} Chain Rule of Probability
 For events $A$ and $B$,
@@ -44,7 +44,7 @@ $$
 $$
 ````
 
-## What Is the Law of Total Probability?
+## What is the law of total probability?
 
 ````{prf:definition} Law of Total Probability
 If $B_1, B_2, \dots, B_n$ is a partition of the sample space, then

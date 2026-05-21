@@ -1,6 +1,6 @@
 # Bayes' Theorem
 
-## Explain Bayes' Theorem
+## Explain Bayes' theorem
 
 Bayes Theorem is a fundamental result in probability theory that describes how to update probabilities based on new evidence. It allows us to flip conditional probabilties.
 

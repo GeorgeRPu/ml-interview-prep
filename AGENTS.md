@@ -2,6 +2,8 @@
 
 @README
 
+- After making code changes, check if `AGENTS.md` or `README.md` needs to be updated to reflect the new project state (e.g. new files, changed tools, updated commands)
+
 ## Commit Messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) format:

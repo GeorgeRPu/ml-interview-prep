@@ -1,6 +1,6 @@
 # Gradient Boosting
 
-## Explain Gradient Boosting
+## Explain gradient boosting
 
 Gradient boosting is a machine learning technique that builds an ensemble of weak learners, typically decision trees, in a sequential manner. Each new weak learner is trained to correct the errors made by the previous trees by predicting the residuals (the difference between the actual and predicted values) of the previous models.
 

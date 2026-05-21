@@ -3,15 +3,15 @@
 A common interview round in ML interview is ML breadth, where the interview is trying to gauge your understanding across a wide range of ML, computer science, mathematical, and statistical concepts. Usually this is done by quizzing you to explain concepts or answer when to use certain techniques or perform calculations. This section contains a collection of questions and answers that are asked in ML breadth interviews.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Statistics & Probability
 
 statistics-and-probability/basic-probability
 statistics-and-probability/expected-value-and-variance
 statistics-and-probability/discrete-distributions
 statistics-and-probability/continuous-distributions
-statistics-and-probability/law-of-large-numbers
 statistics-and-probability/bayes-theorem
+statistics-and-probability/law-of-large-numbers
 statistics-and-probability/central-limit-theorem
 statistics-and-probability/confidence-intervals
 statistics-and-probability/hypothesis-testing
@@ -22,7 +22,7 @@ statistics-and-probability/causal-inference
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Machine Learning
 
 machine-learning/bias-variance-tradeoff
@@ -42,7 +42,7 @@ machine-learning/object-detection-metrics
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Deep Learning
 
 deep-learning/batch-normalization
@@ -56,7 +56,7 @@ deep-learning/multimodal-learning
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: NLP
 
 nlp/bert
@@ -67,7 +67,7 @@ nlp/viterbi-algorithm
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Computer Vision
 
 computer-vision/computer-vision
@@ -77,7 +77,7 @@ computer-vision/video-understanding
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Retrieval, Ranking & Recommendations
 
 retrieval-ranking-and-recommendations/recommendation-systems
