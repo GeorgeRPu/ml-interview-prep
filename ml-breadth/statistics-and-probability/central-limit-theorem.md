@@ -14,12 +14,18 @@ $$
 is the sample average, converges in distribution to a Normal distribution with mean $0$ and variance $\sigma^2$.
 
 $$
-\sqrt{n}\left(\bar{X} - \mu\right) \xrightarrow{dist} \mathcal{N}\left(0, \sigma^2\right)
+\sqrt{n}\left(\bar{X} - \mu\right) \xrightarrow{d} \mathcal{N}\left(0, \sigma^2\right)
+$$
+
+Another way to write this is that the sample average $\bar{X}$ converges in distribution to a Normal distribution with mean $\mu$ and variance $\sigma^2 / n$:
+
+$$
+\bar{X} \xrightarrow{d} \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)
 $$
 ````
 
 ![Example of Central Limit Theorem for Dice Sums](https://upload.wikimedia.org/wikipedia/commons/8/8c/Dice_sum_central_limit_theorem.svg)
-*Figure 1: Distribution of dice sums as the number of dice increases. The distribution approaches a Normal curve, illustrating the Central Limit Theorem.*
+*Figure 1: Distribution of dice sums as the number of dice increases. The distribution approaches a Normal curve, as predicted by the Central Limit Theorem.*
 
 ## Why is the Central Limit Theorem important?
 

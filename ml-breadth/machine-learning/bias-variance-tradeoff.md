@@ -89,7 +89,8 @@ $$
 
 However, there is a tradeoff between bias and variance. As we make our model more flexible (e.g. by adding more parameters), we reduce bias because the model can fit the training data better but this increases variance.
 
-![](https://upload.wikimedia.org/wikipedia/commons/9/9f/Bias_and_variance_contributing_to_total_error.svg)
+![Bias and variance contributing to total error](https://upload.wikimedia.org/wikipedia/commons/9/9f/Bias_and_variance_contributing_to_total_error.svg)
+*Figure 1: As model complexity increases, bias decreases but variance increases.*
 
 ## Give an example of a high bias model and a high variance model.
 
@@ -100,4 +101,7 @@ However, there is a tradeoff between bias and variance. As we make our model mor
 
 Recent research has found that certain models exhibit a phenomenon called **double descent** where increasing model capacity temporarily increases overfitting but then starts reducing test error past a point. This defies traditional bias-variance tradeoff which predicts that test error should keep increasing, as models become higher and higher variance.
 
-![](https://upload.wikimedia.org/wikipedia/commons/d/d7/Double_descent_in_a_two-layer_neural_network_%28Figure_3a_from_Rocks_et_al._2022%29.png)
+The peak in test error occurs at the **interpolation threshold**, where the model has just enough capacity to perfectly fit the training data. At this point, the model is forced into a unique solution that memorizes every training example, including noise. Beyond this threshold, the model becomes overparameterized—there are many solutions that fit the training data, and gradient descent tends to find smoother ones that generalize better.
+
+![Double descent in a two-layer neural network](https://upload.wikimedia.org/wikipedia/commons/d/d7/Double_descent_in_a_two-layer_neural_network_%28Figure_3a_from_Rocks_et_al._2022%29.png)
+*Figure 2: Double descent in a two-layer neural network. Test error first increases then decreases as model complexity grows past the interpolation threshold (Rocks et al., 2022).*

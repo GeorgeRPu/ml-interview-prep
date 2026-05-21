@@ -15,10 +15,10 @@ $$
 for all $t_1, t_2, ..., t_k$ and for all $h$.
 
 Examples of strictly stationary processes:
-- **White noise**: A sequence of iid normal random variables $X_t \sim \mathcal{N}(0, \sigma^2)$. Since draws are independent and identically distributed, the joint distribution is trivially shift-invariant.
+- **White noise**: A sequence of iid normal random variables $X_t \sim \mathcal{N}(0, \sigma^2)$. Since draws are independent and identically distributed (iid), the joint distribution is trivially shift-invariant.
 
 ![White Noise](https://upload.wikimedia.org/wikipedia/commons/c/c1/White_noise.svg)
-*Figure 1: A realization of a white noise process. Each sample is drawn independently from the same distribution, producing no discernible pattern or trend.*
+*Figure 1: An example of white noise. Each sample is drawn independently from the same distribution, producing no discernible pattern or trend.*
 
 - **Coin flip sequences**: Repeated fair coin flips encoded as $\{+1, -1\}$. Each flip is iid Bernoulli, so the full joint distribution is shift-invariant.
 
@@ -65,7 +65,7 @@ Examples of weakly stationary processes:
      $$
      \begin{aligned}
      \mathbb{E}[X_t^2] &= \text{Var}(X_t) \\
-     &= \text{Var}\left(\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}\right) \\
+     &= \Var\left(\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}\right) \\
      &= \sum_{i=0}^{\infty} \phi^{2i} \text{Var}(\epsilon_{t-i}) \quad \text{(independence of } \epsilon \text{)} \\
      &= \sigma^2 \sum_{i=0}^{\infty} \phi^{2i} \\
      &= \frac{\sigma^2}{1 - \phi^2} \quad \text{(geometric series, converges since } |\phi| < 1 \text{)}
@@ -76,8 +76,8 @@ Examples of weakly stationary processes:
 - **MA(q) process**: $X_t = \epsilon_t + \theta_1 \epsilon_{t-1} + ... + \theta_q \epsilon_{t-q}$. Any finite moving average of white noise is always weakly stationary since the mean is zero and autocovariance depends only on lag (and is zero beyond lag $q$).
 - **Daily temperature residuals**: After removing the seasonal trend from daily temperatures, the residuals have approximately constant mean and variance with autocovariance that depends on lag — a classic weakly stationary signal in climate modeling.
 
-![Seasonal Decomposition (NOAA CO2)](https://upload.wikimedia.org/wikipedia/commons/2/27/Noaa_co2_seasonal_decompose.png)
-*Figure 2: Seasonal decomposition of NOAA atmospheric CO₂ data into trend, seasonal, and residual components. The residual component is approximately weakly stationary.*
+![Daily Temperature Residuals](/_static/figures/daily_temperature_residuals.svg)
+*Figure 2: Daily mean temperatures from Central Park, NYC (2021–2023) decomposed into a fitted seasonal component and residuals. After removing the seasonal trend, the residuals have approximately constant mean and variance — a weakly stationary signal.*
 
 ## Why is stationarity important?
 
