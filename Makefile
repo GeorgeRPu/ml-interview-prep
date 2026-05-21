@@ -16,7 +16,7 @@ help:
 .PHONY: help Makefile figures
 
 figures:
-	$(PYTHON) scripts/generate_figures.py
+	$(PYTHON) -m scripts.generate_figures
 
 html: figures
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

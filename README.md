@@ -41,12 +41,22 @@ act push
 act push -P ubuntu-latest=catthehacker/ubuntu:act-latest
 ```
 
+## 📊 Generating Figures
+
+```bash
+uv run python -m scripts.generate_figures
+```
+
+Figures are saved to `_static/figures/`. The temperature residuals figure caches its API response in `scripts/.cache/`.
+
 ## 🗂️ Package Structure
 
 ```
 ml-interview-prep/
 ├── ml-breadth/             # ML breadth concept notes
 ├── ml-system-design/       # ML system design case studies
+├── scripts/                # Figure generation scripts
+│   └── figures/            # Grouped by topic
 ├── _static/                # Static assets (images, CSS)
 ├── _templates/             # Sphinx HTML templates
 ├── _build/                 # Build output (gitignored)
