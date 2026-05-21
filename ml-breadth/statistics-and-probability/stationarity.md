@@ -9,13 +9,13 @@ More formally, a stochastic process $\{X_t\}$ is **strictly stationary** if the
 joint distributions
 
 $$
-F(x_{t_1}, x_{t_2}, ..., x_{t_k}) = F(x_{t_1+h}, x_{t_2+h}, ..., x_{t_k+h})
+F\left(x_{t_1}, x_{t_2}, ..., x_{t_k}\right) = F\left(x_{t_1+h}, x_{t_2+h}, ..., x_{t_k+h}\right)
 $$
 
 for all $t_1, t_2, ..., t_k$ and for all $h$.
 
 Examples of strictly stationary processes:
-- **White noise**: A sequence of iid normal random variables $X_t \sim \mathcal{N}(0, \sigma^2)$. Since draws are independent and identically distributed (iid), the joint distribution is trivially shift-invariant.
+- **White noise**: A sequence of iid normal random variables $X_t \sim \mathcal{N}\left(0, \sigma^2\right)$. Since draws are independent and identically distributed (iid), the joint distribution is trivially shift-invariant.
 
 ![White Noise](https://upload.wikimedia.org/wikipedia/commons/c/c1/White_noise.svg)
 *Figure 1: An example of white noise. Each sample is drawn independently from the same distribution, producing no discernible pattern or trend.*
@@ -28,45 +28,45 @@ of the process are constant over time, and that the variance is finite.
 
 $$
 \begin{aligned}
-\mathbb{E}[X_t] &= \mathbb{E}[X_{t+h}] \quad &&\text{for all } t, h \\
-K_{XX}(t_1, t_2) &= K_{XX}(t_2 - t_1, 0) \quad &&\text{for all } t_1, t_2 \\
-\mathbb{E}[X_t^2] &< \infty \quad &&\text{for all } t
+\mathbb{E}\left[X_t\right] &= \mathbb{E}\left[X_{t+h}\right] \quad &&\text{for all } t, h \\
+K_{XX}\left(t_1, t_2\right) &= K_{XX}\left(t_2 - t_1, 0\right) \quad &&\text{for all } t_1, t_2 \\
+\mathbb{E}\left[X_t^2\right] &< \infty \quad &&\text{for all } t
 \end{aligned}
 $$
 
 Examples of weakly stationary processes:
 - **AR(1) process**: $X_t = \phi X_{t-1} + \epsilon_t$ where $\epsilon_t$ is white noise and $|\phi| < 1$ for $t \in \mathbb{Z}$. This is the first-order autoregressive process. It is weakly stationary because
-  1. $E[X_t] = \sum_{i=0}^{\infty} \phi^i E[\epsilon_i] = 0$. The mean is constant.
+  1. $E\left[X_t\right] = \sum_{i=0}^{\infty} \phi^i E\left[\epsilon_i\right] = 0$. The mean is constant.
   2. Using the infinite sum representation $X_t = \sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}$:
 
      $$
      \begin{aligned}
-     K_{XX}(t, t+h) &= \text{Cov}(X_t, X_{t+h}) \\
+     K_{XX}\left(t, t+h\right) &= \text{Cov}\left(X_t, X_{t+h}\right) \\
      &= \text{Cov}\left(\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i},\; \sum_{j=0}^{\infty} \phi^j \epsilon_{t+h-j}\right) \\
-     &= \sum_{i=0}^{\infty} \sum_{j=0}^{\infty} \phi^i \phi^j \text{Cov}(\epsilon_{t-i}, \epsilon_{t+h-j})
+     &= \sum_{i=0}^{\infty} \sum_{j=0}^{\infty} \phi^i \phi^j \text{Cov}\left(\epsilon_{t-i}, \epsilon_{t+h-j}\right)
      \end{aligned}
      $$
 
-     Since $\epsilon_t$ is white noise, $\text{Cov}(\epsilon_{t-i}, \epsilon_{t+h-j}) = \sigma^2$ only when
+     Since $\epsilon_t$ is white noise, $\text{Cov}\left(\epsilon_{t-i}, \epsilon_{t+h-j}\right) = \sigma^2$ only when
      $t - i = t + h - j$, i.e. $j = i + h$. All other cross-terms are zero. Substituting:
 
      $$
      \begin{aligned}
-     K_{XX}(t, t+h) &= \sum_{i=0}^{\infty} \phi^i \phi^{i+h} \sigma^2 \\
+     K_{XX}\left(t, t+h\right) &= \sum_{i=0}^{\infty} \phi^i \phi^{i+h} \sigma^2 \\
      &= \sigma^2 \phi^h \sum_{i=0}^{\infty} \phi^{2i} \\
      &= \frac{\sigma^2 \phi^h}{1 - \phi^2}
      \end{aligned}
      $$
 
      This depends only on $h$, not on $t$.
-  3. ince $\mathbb{E}[X_t] = 0$, we have
-     $\mathbb{E}[X_t^2] = \text{Var}(X_t)$. Using the infinite sum representation:
+  3. ince $\mathbb{E}\left[X_t\right] = 0$, we have
+     $\mathbb{E}\left[X_t^2\right] = \text{Var}\left[X_t\right]$. Using the infinite sum representation:
 
      $$
      \begin{aligned}
-     \mathbb{E}[X_t^2] &= \text{Var}(X_t) \\
-     &= \text{Var}left(\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}\right) \\
-     &= \sum_{i=0}^{\infty} \phi^{2i} \text{Var}(\epsilon_{t-i}) \quad \text{(independence of } \epsilon \text{)} \\
+     \mathbb{E}\left[X_t^2\right] &= \text{Var}\left[X_t\right] \\
+     &= \text{Var}\left[\sum_{i=0}^{\infty} \phi^i \epsilon_{t-i}\right] \\
+     &= \sum_{i=0}^{\infty} \phi^{2i} \text{Var}\left[\epsilon_{t-i}\right] \quad \text{(independence of } \epsilon \text{)} \\
      &= \sigma^2 \sum_{i=0}^{\infty} \phi^{2i} \\
      &= \frac{\sigma^2}{1 - \phi^2} \quad \text{(geometric series, converges since } |\phi| < 1 \text{)}
      \end{aligned}
@@ -95,7 +95,7 @@ the patterns you learned persist.
 
 3. **Theoretical guarantees**: Results like the ergodic theorem (time averages
 converge to ensemble averages) and the Wold decomposition (any stationary
-process = deterministic + $MA(\infty)$) require stationarity.
+process = deterministic + $MA\left(\infty\right)$) require stationarity.
 
 4. **Model validity**: ARMA models, spectral analysis, and Granger causality
 all assume stationarity. Applying them to non-stationary data produces spurious

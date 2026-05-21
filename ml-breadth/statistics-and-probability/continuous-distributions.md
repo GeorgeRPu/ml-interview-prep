@@ -3,12 +3,12 @@
 ## Uniform distribution
 
 ````{prf:definition} Uniform Distribution
-The **uniform distribution** assigns equal probability to all values in $[a, b]$.
+The **uniform distribution** assigns equal probability to all values in $\left[a, b\right]$.
 
 $$
-f(x) &= \frac{1}{b - a} \\
-\quad \mathbb{E}[X] &= \frac{a + b}{2} \\
-\text{Var}(X) &= \frac{(b-a)^2}{12}
+f\left(x\right) &= \frac{1}{b - a} \\
+\quad \mathbb{E}\left[X\right] &= \frac{a + b}{2} \\
+\text{Var}\left[X\right] &= \frac{\left(b-a\right)^2}{12}
 $$
 ````
 
@@ -20,9 +20,9 @@ $$
 The **normal distribution** is a bell-shaped curve defined by its mean $\mu$ and variance $\sigma^2$.
 
 $$
-f(x) &= \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) \\
-\mathbb{E}[X] &= \mu \\
-\text{Var}(X) &= \sigma^2
+f\left(x\right) &= \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{\left(x - \mu\right)^2}{2\sigma^2}\right) \\
+\mathbb{E}\left[X\right] &= \mu \\
+\text{Var}\left[X\right] &= \sigma^2
 $$
 ````
 
@@ -36,13 +36,13 @@ The 68-95-99.7 rule says approximately 68%, 95%, and 99.7% of values lie within 
 The **exponential distribution** models the time between events in a Poisson process.
 
 $$
-f(x) &= \lambda e^{-\lambda x} \\
-\quad \mathbb{E}[X] &= \frac{1}{\lambda} \\
-\text{Var}(X) &= \frac{1}{\lambda^2}
+f\left(x\right) &= \lambda e^{-\lambda x} \\
+\quad \mathbb{E}\left[X\right] &= \frac{1}{\lambda} \\
+\text{Var}\left[X\right] &= \frac{1}{\lambda^2}
 $$
 
 ````
 
-Like the geometric distribution, the exponential is memoryless: $P(X > s + t \mid X > s) = P(X > t)$.
+Like the geometric distribution, the exponential is memoryless: $P\left(X > s + t \mid X > s\right) = P\left(X > t\right)$.
 
 ![Exponential Distribution](/_static/figures/exponential.png)

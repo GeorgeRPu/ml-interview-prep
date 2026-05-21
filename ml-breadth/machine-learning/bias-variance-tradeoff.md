@@ -10,10 +10,10 @@ Bias in the error from erroneous assumptions in the learning algorithm. For exam
 The **bias** of a learned function $\hat{f}$ at a point $x$ is
 
 $$
-\text{Bias}(\hat{f}(x; \mathcal{D})) = \mathbb{E}_{\mathcal{D}}[\hat{f}(x; \mathcal{D})] - f(x)
+\text{Bias}\left[\hat{f}\left(x; \mathcal{D}\right)\right] = \mathbb{E}_{\mathcal{D}}\left[\hat{f}\left(x; \mathcal{D}\right)\right] - f\left(x\right)
 $$
 
-where $f$ is the true function and $\mathcal{D}$ is the training data. A model is **unbiased** if $\mathbb{E}_{\mathcal{D}}[\hat{f}(x; \mathcal{D})] = f(x)$ for all $x$.
+where $f$ is the true function and $\mathcal{D}$ is the training data. A model is **unbiased** if $\mathbb{E}_{\mathcal{D}}\left[\hat{f}\left(x; \mathcal{D}\right)\right] = f\left(x\right)$ for all $x$.
 ```
 
 ## What is variance?
@@ -26,7 +26,7 @@ Variance is the error from sensitivity to small fluctuations in the training dat
 The **variance** of a learned function $\hat{f}$ at a point $x$ is
 
 $$
-\text{Var}(\hat{f}(x; \mathcal{D})) = \mathbb{E}_{\mathcal{D}}\left[(\hat{f}(x; \mathcal{D}) - \mathbb{E}_{\mathcal{D}}[\hat{f}(x; \mathcal{D})])^2\right]
+\text{Var}\left[\hat{f}\left(x; \mathcal{D}\right)\right] = \mathbb{E}_{\mathcal{D}}\left[\left(\hat{f}\left(x; \mathcal{D}\right) - \mathbb{E}_{\mathcal{D}}\left[\hat{f}\left(x; \mathcal{D}\right)\right]\right)^2\right]
 $$
 ```
 
@@ -35,55 +35,55 @@ $$
 The mean squarederror of our model can be decomposed into three components: bias, variance, and irreducible error (noise). A good model should be low bias and low variance.
 
 $$
-\mathbb{E}_{\mathcal{D}}[(\hat{f}(x; \mathcal{D}) - f(x))^2] = \text{Bias}(\hat{f}(x; \mathcal{D}))^2 + \text{Var}(\hat{f}(x; \mathcal{D})) + \sigma^2
+\mathbb{E}_{\mathcal{D}}\left[\left(\hat{f}\left(x; \mathcal{D}\right) - f\left(x\right)\right)^2\right] = \text{Bias}\left[\hat{f}\left(x; \mathcal{D}\right)\right]^2 + \text{Var}\left[\hat{f}\left(x; \mathcal{D}\right)\right] + \sigma^2
 $$
 
 where $\sigma^2$ is the variance of the noise in the data, which is irreducible.
 
 ```{prf:proof}
-Let $y = f(x) + \epsilon$ where $\mathbb{E}[\epsilon] = 0$ and $\text{Var}(\epsilon) = \sigma^2$.  The mean squared error of our model $\hat{f}$ acorss all possible training datasets $\mathcal{D}$ is
+Let $y = f\left(x\right) + \epsilon$ where $\mathbb{E}\left[\epsilon\right] = 0$ and $\text{Var}\left[\epsilon\right] = \sigma^2$.  The mean squared error of our model $\hat{f}$ acorss all possible training datasets $\mathcal{D}$ is
 
 $$
 \begin{aligned}
-\mathbb{E}_{\mathcal{D}, \epsilon}\left[(y - \hat{f}(x))^2\right]
-&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[(f(x) + \epsilon - \hat{f}(x))^2\right] \\
-&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[((f(x) - \hat{f}(x)) + \epsilon)^2\right] \\
-&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[(f(x) - \hat{f}(x))^2\right] + 2\mathbb{E}_{\mathcal{D}, \epsilon}\left[(f(x) - \hat{f}(x))\epsilon\right] + \mathbb{E}_{\mathcal{D}, \epsilon}\left[\epsilon^2\right]
+\mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(y - \hat{f}\left(x\right)\right)^2\right]
+&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(f\left(x\right) + \epsilon - \hat{f}\left(x\right)\right)^2\right] \\
+&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(\left(f\left(x\right) - \hat{f}\left(x\right)\right) + \epsilon\right)^2\right] \\
+&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(f\left(x\right) - \hat{f}\left(x\right)\right)^2\right] + 2\mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(f\left(x\right) - \hat{f}\left(x\right)\right)\epsilon\right] + \mathbb{E}_{\mathcal{D}, \epsilon}\left[\epsilon^2\right]
 \end{aligned}
 $$
 
 Since $\epsilon$ is independent of $\hat{f}$,
 
 $$
-2\mathbb{E}_{\mathcal{D}, \epsilon}\left[(f(x) - \hat{f}(x))\epsilon\right] = 2\mathbb{E}_{\mathcal{D}, \epsilon}[f(x) - \hat{f}(x)] \cdot \mathbb{E}_{\mathcal{D}, \epsilon}[\epsilon] = 0
+2\mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(f\left(x\right) - \hat{f}\left(x\right)\right)\epsilon\right] = 2\mathbb{E}_{\mathcal{D}, \epsilon}\left[f\left(x\right) - \hat{f}\left(x\right)\right] \cdot \mathbb{E}_{\mathcal{D}, \epsilon}\left[\epsilon\right] = 0
 $$
 
-because $\mathbb{E}_{\mathcal{D}, \epsilon}[\epsilon] = 0$. For the last term,
+because $\mathbb{E}_{\mathcal{D}, \epsilon}\left[\epsilon\right] = 0$. For the last term,
 
 $$
-\mathbb{E}_{\mathcal{D}, \epsilon}[\epsilon^2] = \text{Var}(\epsilon) + \mathbb{E}_{\mathcal{D}, \epsilon}[\epsilon]^2 = \sigma^2 + 0 = \sigma^2.
+\mathbb{E}_{\mathcal{D}, \epsilon}\left[\epsilon^2\right] = \text{Var}\left[\epsilon\right] + \mathbb{E}_{\mathcal{D}, \epsilon}\left[\epsilon\right]^2 = \sigma^2 + 0 = \sigma^2.
 $$
 
-It remains to decompose the first term. Add and subtract $\bar{f}(x) = \mathbb{E}_{\mathcal{D}}[\hat{f}(x; \mathcal{D})]$.
+It remains to decompose the first term. Add and subtract $\bar{f}\left(x\right) = \mathbb{E}_{\mathcal{D}}\left[\hat{f}\left(x; \mathcal{D}\right)\right]$.
 
 $$
 \begin{aligned}
-\mathbb{E}_{\mathcal{D}, \epsilon}\left[(f(x) - \hat{f}(x))^2\right]
-&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[((f(x) - \bar{f}(x)) + (\bar{f}(x) - \hat{f}(x)))^2\right] \\
-&= (f(x) - \bar{f}(x))^2 + 2(f(x) - \bar{f}(x))\mathbb{E}_{\mathcal{D}, \epsilon}\left[\bar{f}(x) - \hat{f}(x)\right] + \mathbb{E}_{\mathcal{D}, \epsilon}\left[(\hat{f}(x) - \bar{f}(x))^2\right]
+\mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(f\left(x\right) - \hat{f}\left(x\right)\right)^2\right]
+&= \mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(\left(f\left(x\right) - \bar{f}\left(x\right)\right) + \left(\bar{f}\left(x\right) - \hat{f}\left(x\right)\right)\right)^2\right] \\
+&= \left(f\left(x\right) - \bar{f}\left(x\right)\right)^2 + 2\left(f\left(x\right) - \bar{f}\left(x\right)\right)\mathbb{E}_{\mathcal{D}, \epsilon}\left[\bar{f}\left(x\right) - \hat{f}\left(x\right)\right] + \mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(\hat{f}\left(x\right) - \bar{f}\left(x\right)\right)^2\right]
 \end{aligned}
 $$
 
 The cross term vanishes because
 
 $$
-\mathbb{E}_{\mathcal{D}, \epsilon}[\bar{f}(x) - \hat{f}(x)] = \bar{f}(x) - \mathbb{E}_{\mathcal{D}, \epsilon}[\hat{f}(x)] = 0.
+\mathbb{E}_{\mathcal{D}, \epsilon}\left[\bar{f}\left(x\right) - \hat{f}\left(x\right)\right] = \bar{f}\left(x\right) - \mathbb{E}_{\mathcal{D}, \epsilon}\left[\hat{f}\left(x\right)\right] = 0.
 $$
 
-as $\bar{f}(x) = \mathbb{E}_{\mathcal{D}}[\hat{f}(x; \mathcal{D})]$. Therefore, in our final decomposition, the first term is $\text{Bias}(\hat{f}(x))^2$ and the last term is $\text{Var}(\hat{f}(x))$.
+as $\bar{f}\left(x\right) = \mathbb{E}_{\mathcal{D}}\left[\hat{f}\left(x; \mathcal{D}\right)\right]$. Therefore, in our final decomposition, the first term is $\text{Bias}\left[\hat{f}\left(x\right)\right]^2$ and the last term is $\text{Var}\left[\hat{f}\left(x\right)\right]$.
 
 $$
-\mathbb{E}_{\mathcal{D}, \epsilon}\left[(y - \hat{f}(x))^2\right] = \text{Bias}(\hat{f}(x))^2 + \text{Var}(\hat{f}(x)) + \sigma^2
+\mathbb{E}_{\mathcal{D}, \epsilon}\left[\left(y - \hat{f}\left(x\right)\right)^2\right] = \text{Bias}\left[\hat{f}\left(x\right)\right]^2 + \text{Var}\left[\hat{f}\left(x\right)\right] + \sigma^2
 $$
 ```
 
