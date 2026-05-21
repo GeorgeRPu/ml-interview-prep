@@ -6,7 +6,7 @@ A common interview round in ML interview is ML breadth, where the interview is t
 :maxdepth: 2
 :caption: Statistics & Probability
 
-statistics-and-probability/probability-rules
+statistics-and-probability/basic-probability
 statistics-and-probability/expected-value-and-variance
 statistics-and-probability/discrete-distributions
 statistics-and-probability/continuous-distributions
