@@ -15,7 +15,7 @@ statistics-and-probability/law-of-large-numbers
 statistics-and-probability/central-limit-theorem
 statistics-and-probability/confidence-intervals
 statistics-and-probability/hypothesis-testing
-statistics-and-probability/common-hypothesis-tests
+statistics-and-probability/hypothesis-tests
 statistics-and-probability/ab-testing
 statistics-and-probability/autocorrelation
 statistics-and-probability/stationarity
@@ -30,4 +30,5 @@ machine-learning/gradient-boosting
 machine-learning/imbalanced-data
 machine-learning/classification-metrics
 machine-learning/calibration
+machine-learning/data-splitting
 ```

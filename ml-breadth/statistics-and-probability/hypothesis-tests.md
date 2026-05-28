@@ -1,4 +1,4 @@
-# Common Hypothesis Test Statistics
+# Hypothesis Tests
 
 ## Z-test
 

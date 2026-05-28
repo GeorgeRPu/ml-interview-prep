@@ -4,17 +4,13 @@
 
 **Calibration** is the process of ensuring that the predicted probabilities of a classifier match the observed frequencies of the outcomes. For example, if a classifier predicts a probability of 0.8 for a certain class, then we would expect that class to be correct approximately 80% of the time when that probability is predicted.
 
-## Reliability diagram
-
-## Expected calibration error
-
 ## How do we measure calibration?
 
 **Calibration curves** or **reliability diagrams** compare the predicted probabilities with the observed frequencies of the outcomes. For each bin of predicted probabilities, we plot the average predicted probability against the average observed frequency. A perfectly calibrated model would have a reliability diagram that is a diagonal line from (0, 0) to (1, 1).
 
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_compare_calibration_001.png)
 
-**Expected calibration error (ECE)** is the weighted average of the absolute differences between the predicted probabilities and the observed frequencies across all bins.
+**Expected calibration error (ECE)** is the weighted average of the absolute differences between the predicted probabilities $p_i$ and the observed frequencies $o_i$ across all bins $B_1, \dots, B_n$.
 
 $$
 ECE = \sum_{i=1}^{n} \frac{|B_i|}{N} |p_i - o_i|
