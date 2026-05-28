@@ -26,6 +26,22 @@ Use `sphinx-proof` directives (four backticks) for formal mathematical concepts:
 
 Keep interpretive commentary, intuition, and caveats **outside** the block. The block itself should contain only the formal statement and its formula.
 
+## Figures
+
+- Figure scripts live in `scripts/figures/` as Python modules, each with a `generate_all()` function
+- Register new modules in `scripts/generate_figures.py` and run with `uv run python -m scripts.generate_figures`
+- Use the `save(fig, name)` helper from `scripts/figures/__init__.py` — it writes PNGs to `_static/figures/`
+- Avoid matplotlib titles (`set_title`) — use a markdown caption instead
+- In markdown, use a plain image with short alt text followed by an italic caption on the next line:
+
+```md
+![Short alt text](/_static/figures/figure_name.png)
+
+*Descriptive caption explaining the figure.*
+```
+
+- Do not use `{figure}` directives
+
 ## Math Conventions
 
 - Always use `\left` and `\right` around parentheses and brackets in LaTeX math expressions
