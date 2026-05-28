@@ -59,7 +59,7 @@ Examples of weakly stationary processes:
      $$
 
      This depends only on $h$, not on $t$.
-  3. ince $\mathbb{E}\left[X_t\right] = 0$, we have
+  3. Since $\mathbb{E}\left[X_t\right] = 0$, we have
      $\mathbb{E}\left[X_t^2\right] = \text{Var}\left[X_t\right]$. Using the infinite sum representation:
 
      $$

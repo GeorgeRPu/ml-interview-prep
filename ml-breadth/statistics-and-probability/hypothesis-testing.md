@@ -13,31 +13,49 @@ The general procedure for hypothesis testing is:
 
 ## Null and alternative hypotheses
 
-- Null hypothesis $H_0$: the default assumption, e.g. "there is no difference" or "the coin is fair"
-- Alternative hypothesis $H_1$ : what we want to provide evidence for, e.g. "there is a difference" or "the coin is biased"
+````{prf:definition} Null and Alternative Hypotheses
+The **null hypothesis** $H_0$ is the default assumption, e.g. "there is no difference" or "the coin is fair."
 
-## Type I and Type II errors
+The **alternative hypothesis** $H_1$ is what we want to provide evidence for, e.g. "there is a difference" or "the coin is biased."
+````
 
-- **Type I error** (false positive): rejecting $H_0$ when it is true. Probability $= \alpha$.
-- **Type II error** (false negative): failing to reject $H_0$ when $H_1$ is true. Probability $= \beta$.
+## What are Type I and Type II errors?
+
+````{prf:definition} Type I and Type II Errors
+A **Type I error** (false positive) is rejecting $H_0$ when it is true. Its probability is $\alpha$.
+
+A **Type II error** (false negative) is failing to reject $H_0$ when $H_1$ is true. Its probability is $\beta$.
+````
 
 ## p-value
 
-The p-value is the probability of observing data at least as extreme as the observed data, assuming $H_0$ is true. A small p-value (typically $< 0.05$) provides evidence against $H_0$.
+````{prf:definition} p-value
+The **p-value** is the probability of observing data at least as extreme as the observed data, assuming $H_0$ is true.
 
-The p-value is NOT the probability that $H_0$ is true (that would be the posterior $\Pr(H_0 \mid D)$). It is the probability of the observed data given $H_0$ $P(D \mid H_0)$.
+$$
+p = \Pr\left(\text{data as extreme as observed} \mid H_0\right)
+$$
+````
+
+A small p-value (typically $< 0.05$) provides evidence against $H_0$.
+
+The p-value is NOT the probability that $H_0$ is true (that would be the posterior $\Pr\left(H_0 \mid D\right)$). It is the probability of the observed data given $H_0$, $\Pr\left(D \mid H_0\right)$.
 
 ## Significance level
 
-The significance level $\alpha$ is the threshold for rejecting the null hypothesis. It is the probability of a Type I error (false positive).
+````{prf:definition} Significance Level
+The **significance level** $\alpha$ is the threshold for rejecting the null hypothesis. It is the maximum probability of a Type I error (false positive) that we are willing to tolerate. If $p < \alpha$, we reject $H_0$.
+````
 
 ## Statistical power
 
-The probability of correctly rejecting $H_0$ when $H_1$ is true:
+````{prf:definition} Statistical Power
+**Statistical power** is the probability of correctly rejecting $H_0$ when $H_1$ is true.
 
 $$
-\text{Power} = 1 - \beta = P\left(\text{reject } H_0 \mid H_1 \text{ is true}\right)
+\text{Power} = 1 - \beta = \Pr\left(\text{reject } H_0 \mid H_1 \text{ is true}\right)
 $$
+````
 
 A typical target power is $0.8$ (i.e. 80% chance of detecting a real effect).
 
@@ -77,5 +95,4 @@ From the formula above, we see 3 levers.
 
 - **Power increases with higher $\alpha$.** A larger $\alpha$ means a less strict rejection threshold — $z_{\alpha/2}$ decreases, expanding the rejection region. For example, $z_{0.025} = 1.96$ but $z_{0.05} = 1.645$. This makes it easier to reject $H_0$, increasing power but also increasing the false positive rate. In practice, $\alpha$ is usually fixed at $0.05$, so the main knobs are sample size and minimum detectable effect.
 
-- **Lower variance $\sigma^2$ also increases power.** Reducing noise (through better measurement, stratification, or variance reduction techniques like CUPED) makes effects easier to detect without needing more samples.
-
+Lower variance $\sigma^2$ also increases power. Reducing noise (through better measurement, stratification, or variance reduction techniques like CUPED) makes effects easier to detect without needing more samples.

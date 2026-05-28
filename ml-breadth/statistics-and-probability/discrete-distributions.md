@@ -31,6 +31,8 @@ P\left(X = k\right) &= \binom{n}{k} p^k \left(1-p\right)^{n-k} \\
 $$
 ````
 
+As the number of trials $n$ increases, the binomial distribution approaches a normal distribution with mean $np$ and variance $np(1-p)$ due to the Central Limit Theorem.
+
 ![Binomial Distribution](/_static/figures/binomial.png)
 
 ## Geometric distribution
