@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 FIGURES_DIR = REPO_ROOT / "_static" / "figures"
-DPI = 200
+DPI = 300
 
 
 def save(fig, name):
