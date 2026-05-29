@@ -33,3 +33,10 @@ machine-learning/calibration
 machine-learning/data-splitting
 machine-learning/overfitting-and-underfitting
 ```
+
+```{toctree}
+:maxdepth: 1
+:caption: Deep Learning
+
+deep-learning/transformers
+```

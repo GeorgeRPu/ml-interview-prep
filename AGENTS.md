@@ -42,10 +42,27 @@ Keep interpretive commentary, intuition, and caveats **outside** the block. The 
 
 - Do not use `{figure}` directives
 
+## Citations
+
+- Use `sphinxcontrib-bibtex` for academic references
+- Add BibTeX entries to `references.bib` in the repo root
+- Cite inline with `` {cite}`Key2019` ``
+- Add a bibliography directive at the bottom of any page that uses citations:
+
+```md
+\`\`\`{bibliography}
+:filter: docname in docnames
+\`\`\`
+```
+
 ## Math Conventions
 
 - Always use `\left` and `\right` around parentheses and brackets in LaTeX math expressions
 - Use brackets for `\text{Bias}` and `\text{Var}` operators: `\text{Bias}\left[...\right]`, `\text{Var}\left[X\right]`
+
+## Commits
+
+When adding new files, don't forget to add the file to the appropriate index.
 
 ## Commit Messages
 
