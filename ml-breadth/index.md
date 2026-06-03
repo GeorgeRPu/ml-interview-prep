@@ -45,5 +45,6 @@ deep-learning/transformers
 :maxdepth: 1
 :caption: NLP
 
+nlp/text-normalization
 nlp/tokenization
 ```
