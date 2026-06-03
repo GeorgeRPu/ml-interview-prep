@@ -57,16 +57,13 @@ def generate_calibration_comparison():
                 label="Platt scaling (sigmoid)")
     ax_map.plot(grid, isotonic_mapping, color="darkorange", linewidth=2,
                 label="Isotonic regression (step)")
-    ax_map.set_title("Learned Calibration Map", fontsize=14)
+    ax_map.set_title("Learned calibration map")
     ax_map.set_xlabel("Raw classifier score", fontsize=12)
     ax_map.set_ylabel("Calibrated probability", fontsize=12)
     ax_map.set_xlim([0.0, 1.0])
     ax_map.set_ylim([0.0, 1.0])
     ax_map.legend(loc="upper left", fontsize=10, framealpha=0.9)
     ax_map.grid(True, alpha=0.3)
-    ax_map.text(0.5, -0.22,
-                "(a) Learned mapping from raw score to calibrated probability.",
-                transform=ax_map.transAxes, ha="center", va="top", fontsize=11)
 
     n_bins = 10
     frac_uncal, mean_uncal = calibration_curve(
@@ -83,20 +80,17 @@ def generate_calibration_comparison():
                 label="Perfectly calibrated")
     ax_rel.plot(mean_uncal, frac_uncal, marker="o", color="firebrick",
                 linewidth=2, label="Uncalibrated")
-    ax_rel.plot(mean_platt, frac_platt, marker="s", color="steelblue",
+    ax_rel.plot(mean_platt, frac_platt, marker="o", color="steelblue",
                 linewidth=2, label="Platt scaling")
-    ax_rel.plot(mean_iso, frac_iso, marker="^", color="darkorange",
+    ax_rel.plot(mean_iso, frac_iso, marker="o", color="darkorange",
                 linewidth=2, label="Isotonic regression")
-    ax_rel.set_title("Reliability Diagram", fontsize=14)
+    ax_rel.set_title("Reliability diagram")
     ax_rel.set_xlabel("Mean predicted probability", fontsize=12)
     ax_rel.set_ylabel("Fraction of positives", fontsize=12)
     ax_rel.set_xlim([0.0, 1.0])
     ax_rel.set_ylim([0.0, 1.0])
     ax_rel.legend(loc="upper left", fontsize=10, framealpha=0.9)
     ax_rel.grid(True, alpha=0.3)
-    ax_rel.text(0.5, -0.22,
-                "(b) Reliability diagram before and after each calibrator.",
-                transform=ax_rel.transAxes, ha="center", va="top", fontsize=11)
 
     plt.tight_layout()
     save(fig, "calibration_platt_vs_isotonic")

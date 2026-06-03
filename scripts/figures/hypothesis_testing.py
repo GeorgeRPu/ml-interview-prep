@@ -42,8 +42,6 @@ def generate_power():
                 fontsize=11, ha="left",
                 arrowprops=dict(arrowstyle="->", color="black"))
 
-    power_val = 1 - norm.cdf(z_crit, loc=delta, scale=sigma)
-    ax.set_title(f"Statistical Power (power = {power_val:.2f})", fontweight="bold", fontsize=14)
     ax.set_xlabel("Test statistic $Z$")
     ax.set_ylabel("Density")
     ax.legend(loc="upper left", fontsize=9, framealpha=0.9)
@@ -69,7 +67,6 @@ def generate_t_vs_normal():
         ax.plot(x, t.pdf(x, df), linewidth=1.8, color=color,
                 label=rf"$t$ (df$={df}$)")
 
-    ax.set_title("t-Distribution vs. Standard Normal", fontweight="bold", fontsize=14)
     ax.set_xlabel("$x$")
     ax.set_ylabel("Density")
     ax.legend(fontsize=10, framealpha=0.9)

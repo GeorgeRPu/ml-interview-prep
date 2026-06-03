@@ -38,13 +38,10 @@ def generate_mse_vs_mae():
                         fontsize=11, verticalalignment="top",
                         bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
                                   edgecolor="grey", alpha=0.9))
+    ax_scatter.set_title("Residuals with one outlier (red)")
     ax_scatter.set_xlabel("$x$", fontsize=12)
     ax_scatter.set_ylabel("$y$", fontsize=12)
     ax_scatter.grid(True, alpha=0.3)
-    ax_scatter.text(0.5, -0.18,
-                    "(a) Residuals with one outlier (red).",
-                    transform=ax_scatter.transAxes, ha="center", va="top",
-                    fontsize=11)
 
     base_residuals = rng.normal(0, 1.5, 20)
     outlier_magnitudes = np.linspace(0, 20, 200)
@@ -59,14 +56,11 @@ def generate_mse_vs_mae():
                   label="MSE (quadratic)")
     ax_sweep.plot(outlier_magnitudes, mae_values, color="darkorange", linewidth=2,
                   label="MAE (linear)")
+    ax_sweep.set_title("MSE grows quadratically; MAE grows linearly")
     ax_sweep.set_xlabel("Outlier magnitude", fontsize=12)
     ax_sweep.set_ylabel("Metric value", fontsize=12)
     ax_sweep.legend(loc="upper left", fontsize=10, framealpha=0.9)
     ax_sweep.grid(True, alpha=0.3)
-    ax_sweep.text(0.5, -0.18,
-                  "(b) MSE grows quadratically; MAE grows linearly.",
-                  transform=ax_sweep.transAxes, ha="center", va="top",
-                  fontsize=11)
 
     plt.tight_layout()
     save(fig, "mse_vs_mae_outlier")
@@ -102,14 +96,12 @@ def generate_r_squared():
                     fontsize=12, verticalalignment="top",
                     bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
                               edgecolor="grey", alpha=0.9))
+    ax_tot.set_title("Total variance: deviations from the mean")
     ax_tot.set_xlabel("$x$", fontsize=12)
     ax_tot.set_ylabel("$y$", fontsize=12)
     ax_tot.set_ylim(ylim)
     ax_tot.legend(loc="lower right", fontsize=10, framealpha=0.9)
     ax_tot.grid(True, alpha=0.3)
-    ax_tot.text(0.5, -0.18,
-                "(a) Total variance: deviations from the mean.",
-                transform=ax_tot.transAxes, ha="center", va="top", fontsize=11)
 
     for i in range(n):
         ax_res.plot([x[i], x[i]], [y_pred[i], y_true[i]],
@@ -123,14 +115,12 @@ def generate_r_squared():
         fontsize=12, verticalalignment="top",
         bbox=dict(boxstyle="round,pad=0.5", facecolor="white",
                   edgecolor="grey", alpha=0.9))
+    ax_res.set_title("Residual variance: deviations from the fit")
     ax_res.set_xlabel("$x$", fontsize=12)
     ax_res.set_ylabel("$y$", fontsize=12)
     ax_res.set_ylim(ylim)
     ax_res.legend(loc="lower right", fontsize=10, framealpha=0.9)
     ax_res.grid(True, alpha=0.3)
-    ax_res.text(0.5, -0.18,
-                "(b) Residual variance: deviations from the fit.",
-                transform=ax_res.transAxes, ha="center", va="top", fontsize=11)
 
     plt.tight_layout()
     save(fig, "r_squared")

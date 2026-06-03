@@ -85,6 +85,8 @@ where $\Phi$ is the standard normal CDF and $z_{\alpha/2}$ is the critical value
 
 ![Statistical power diagram](/_static/figures/statistical_power.png)
 
+*Power ($1 - \beta$) is the area under the alternative distribution $H_1$ that falls in the rejection region (beyond the critical value $z_{\alpha/2}$). The grey region is $\beta$, the Type II error rate. For an effect size $\delta = 2.5$ at $\alpha = 0.05$, the power is 0.71.*
+
 ## What affects power?
 
 From the formula above, we see 3 levers.

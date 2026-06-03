@@ -43,7 +43,7 @@ $$
 MAE is preferred over MSE when less sensitivity to outliers is desired and easier interpretation (being the average of the residuals) is needed.
 
 ![MSE vs MAE outlier sensitivity](/_static/figures/mse_vs_mae_outlier.png)
-*A single outlier (a) pulls the fit line and inflates MSE far more than MAE because MSE squares the residual. As the outlier magnitude grows (b), MSE increases quadratically while MAE increases linearly.*
+*A single outlier (left) pulls the fit line and inflates MSE far more than MAE because MSE squares the residual. As the outlier magnitude grows (right), MSE increases quadratically while MAE increases linearly.*
 
 ## Mean absolute percentage error
 
@@ -98,7 +98,7 @@ $R^2 = 1$ means the model explains all variance; $R^2 = 0$ means it performs no 
 A key limitation is that $R^2$ never decreases when adding features, even irrelevant ones, because additional parameters can only reduce $SS_{\text{res}}$.
 
 ![R-squared calculation](/_static/figures/r_squared.png)
-*The model fit (b) reduces the total deviations from the mean (a). $R^2$ is the fraction of total variance ($SS_{\text{tot}}$) eliminated by the model, computed as $1 - SS_{\text{res}} / SS_{\text{tot}}$.*
+*The model fit (right) reduces the total deviations from the mean (left). $R^2$ is the fraction of total variance ($SS_{\text{tot}}$) eliminated by the model, computed as $1 - SS_{\text{res}} / SS_{\text{tot}}$.*
 
 ## Adjusted $R^2$
 

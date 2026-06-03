@@ -28,6 +28,8 @@ $$
 
 ![t-distribution vs. standard normal](/_static/figures/t_vs_normal.png)
 
+*The t-distribution has heavier tails than the standard normal, reflecting the extra uncertainty from estimating $\sigma$ with $s$. As the degrees of freedom increase, the tails thin and the t-distribution converges to $\mathcal{N}(0, 1)$.*
+
 The denominator is $n-1$ rather than $n$ due to **Bessel's correction**. Dividing by $n$ systematically underestimates the true variance because $\bar{X}$ is closer to the sample points than the true mean $\mu$. Dividing by $n-1$ makes $s^2$ an unbiased estimator of $\sigma^2$. The substitution of $s$ for the unknown $\sigma$ introduces extra uncertainty, which is why the test statistic follows the heavier-tailed t-distribution rather than the normal. As $n \to \infty$, $s \to \sigma$ and the t-distribution converges to the standard normal, so the t-test and z-test become equivalent.
 
 ## Two-sample t-test

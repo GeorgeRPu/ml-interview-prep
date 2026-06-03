@@ -62,18 +62,16 @@ def generate_temperature_residuals():
 
     axes[0].plot(days, temps, linewidth=0.5, color="tab:red")
     axes[0].set_ylabel("Temperature (°C)")
-    axes[0].set_title(
-        "Daily Mean Temperature — Central Park, NYC (2021–2023)")
+    axes[0].set_title("Daily mean temperature — Central Park, NYC (2021–2023)")
 
     axes[1].plot(days, seasonal, linewidth=1.5, color="tab:orange")
     axes[1].set_ylabel("Temperature (°C)")
-    axes[1].set_title("Fitted Seasonal Component")
+    axes[1].set_title("Fitted seasonal component")
 
     axes[2].plot(days, residuals, linewidth=0.5, color="tab:blue")
     axes[2].axhline(0, color="black", linewidth=0.5, linestyle="--")
     axes[2].set_ylabel("Residual (°C)")
-    axes[2].set_title(
-        "Residuals After Removing Seasonal Trend (≈ weakly stationary)")
+    axes[2].set_title("Residuals after removing seasonal trend (≈ weakly stationary)")
     axes[2].set_xlabel("Day")
 
     plt.tight_layout()

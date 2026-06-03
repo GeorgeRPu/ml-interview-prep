@@ -31,12 +31,13 @@ Keep interpretive commentary, intuition, and caveats **outside** the block. The 
 - Figure scripts live in `scripts/figures/` as Python modules, each with a `generate_all()` function
 - Register new modules in `scripts/generate_figures.py` and run with `uv run python -m scripts.generate_figures`
 - Use the `save(fig, name)` helper from `scripts/figures/__init__.py` — it writes PNGs to `_static/figures/`
-- Avoid matplotlib titles (`set_title`) — use a markdown caption instead
+- When multiple series are already distinguished by color, use the same point marker (e.g. all `marker="o"`) — color alone carries the distinction, so varying marker shapes only adds noise
+- Multi-panel figures: give each panel a short `set_title` to label it — no `(a)`/`(b)` prefix, no bold, no custom font size (use matplotlib defaults). Reference panels from the markdown caption by position (e.g. left/right, top/bottom). Do not add a separate subcaption below the panel
+- Single-panel figures: no title — rely on the markdown caption alone
 - In markdown, use a plain image with short alt text followed by an italic caption on the next line:
 
 ```md
 ![Short alt text](/_static/figures/figure_name.png)
-
 *Descriptive caption explaining the figure.*
 ```
 
