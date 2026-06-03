@@ -63,7 +63,9 @@ Keep interpretive commentary, intuition, and caveats **outside** the block. The 
 
 ## Commits
 
-When adding new files, don't forget to add the file to the appropriate index.
+**IMPORTANT**:
+- When adding new files, don't forget to add the file to the appropriate index (e.g. `index.md` in the same directory, or `index.md` in a parent directory if it's a new subdirectory).
+- When adding new files, don't forget to any figures to _static/figures/ and add the corresponding script to scripts/figures/ and register it in scripts/generate_figures.py.
 
 ## Commit Messages
 

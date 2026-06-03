@@ -25,13 +25,13 @@ statistics-and-probability/stationarity
 :maxdepth: 1
 :caption: Machine Learning
 
-machine-learning/bias-variance-tradeoff
-machine-learning/gradient-boosting
-machine-learning/imbalanced-data
-machine-learning/classification-metrics
-machine-learning/calibration
 machine-learning/data-splitting
 machine-learning/overfitting-and-underfitting
+machine-learning/bias-variance-tradeoff
+machine-learning/classification-metrics
+machine-learning/calibration
+machine-learning/imbalanced-data
+machine-learning/gradient-boosting
 ```
 
 ```{toctree}
@@ -39,4 +39,11 @@ machine-learning/overfitting-and-underfitting
 :caption: Deep Learning
 
 deep-learning/transformers
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: NLP
+
+nlp/tokenization
 ```
