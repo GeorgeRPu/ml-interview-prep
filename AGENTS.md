@@ -60,6 +60,7 @@ Keep interpretive commentary, intuition, and caveats **outside** the block. The 
 
 - Always use `\left` and `\right` around parentheses and brackets in LaTeX math expressions
 - Use brackets for `\text{Bias}` and `\text{Var}` operators: `\text{Bias}\left[...\right]`, `\text{Var}\left[X\right]`
+- Use capital $N$ for the number of datapoints (samples / observations). Reserve lowercase $n$ for other counts (e.g. sequence length, number of trials in a binomial, number of thresholds or bins, items in a ranking)
 
 ## Commits
 

@@ -66,24 +66,24 @@ A typical target power is $0.8$ (i.e. 80% chance of detecting a real effect).
 
 ## How is power derived for a two-sample z-test?
 
-Consider a two-sample z-test comparing means $\mu_0$ (control) and $\mu_1$ (treatment) with known variance $\sigma^2$ and $n$ samples per group. Under $H_0$, the test statistic
+Consider a two-sample z-test comparing means $\mu_0$ (control) and $\mu_1$ (treatment) with known variance $\sigma^2$ and $N$ samples per group. Under $H_0$, the test statistic
 
 $$
-Z = \frac{\bar{X}_1 - \bar{X}_0}{\sigma\sqrt{\frac{2}{n}}}
+Z = \frac{\bar{X}_1 - \bar{X}_0}{\sigma\sqrt{\frac{2}{N}}}
 $$
 
 follows $\mathcal{N}\left(0, 1\right)$. We reject $H_0$ when $|Z| > z_{\alpha/2}$.
 
-And if $H_1$ is true? Let the true difference be $\delta = \mu_1 - \mu_0 \neq 0$. Then $Z$ is shifted by $\delta / \left(\sigma\sqrt{2/n}\right)$.
+And if $H_1$ is true? Let the true difference be $\delta = \mu_1 - \mu_0 \neq 0$. Then $Z$ is shifted by $\delta / \left(\sigma\sqrt{2/N}\right)$.
 
 $$
-Z \sim \mathcal{N}\left(\frac{\delta}{\sigma\sqrt{\frac{2}{n}}}, 1\right)
+Z \sim \mathcal{N}\left(\frac{\delta}{\sigma\sqrt{\frac{2}{N}}}, 1\right)
 $$
 
 Power is the probability that this shifted distribution falls in the rejection region.
 
 $$
-\text{Power} = \Phi\left(\frac{|\delta|}{\sigma\sqrt{\frac{2}{n}}} - z_{\alpha/2}\right)
+\text{Power} = \Phi\left(\frac{|\delta|}{\sigma\sqrt{\frac{2}{N}}} - z_{\alpha/2}\right)
 $$
 
 where $\Phi$ is the standard normal CDF and $z_{\alpha/2}$ is the critical value such that $\Pr\left(Z > z_{\alpha/2}\right) = \alpha/2$. The $\alpha/2$ comes from splitting the significance level across both tails of a two-sided test.
@@ -96,7 +96,7 @@ where $\Phi$ is the standard normal CDF and $z_{\alpha/2}$ is the critical value
 
 From the formula above, we see 3 levers.
 
-- **Power increases with larger sample size $n$.** Increasing $n$ makes the term $\frac{|\delta|}{\sigma\sqrt{2/n}}$ larger because the denominator $\sigma\sqrt{2/n}$ shrinks. Intuitively, more data reduces the standard error of the estimate, making it easier to distinguish a real effect from noise. The relationship is $\sim \sqrt{n}$, so to double the sensitivity (halve the detectable effect), you need 4x the sample size.
+- **Power increases with larger sample size $N$.** Increasing $N$ makes the term $\frac{|\delta|}{\sigma\sqrt{2/N}}$ larger because the denominator $\sigma\sqrt{2/N}$ shrinks. Intuitively, more data reduces the standard error of the estimate, making it easier to distinguish a real effect from noise. The relationship is $\sim \sqrt{N}$, so to double the sensitivity (halve the detectable effect), you need 4x the sample size.
 
 - **Power increases with larger effect size $|\delta|$.** A larger true difference $|\delta|$ shifts the distribution of the test statistic further from the null, making the real effect easier to detect. This also means it is much easier to detect a 10% change in a metric than a 1% change. The effect size is often standardized as Cohen's $d = \delta / \sigma$.
 

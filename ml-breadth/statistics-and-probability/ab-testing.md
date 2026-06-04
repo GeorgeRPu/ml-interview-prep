@@ -38,16 +38,16 @@ For example, suppose we are trying to increase the current conversion rate from 
 For comparing two proportions $p_1$ and $p_2$ where $\text{MDE} = |p_1 - p_2|$:
 
 $$
-n \approx \frac{\left(z_{\alpha/2} + z_\beta\right)^2 \left(p_1\left(1-p_1\right) + p_2\left(1-p_2\right)\right)}{\left(p_1 - p_2\right)^2}
+N \approx \frac{\left(z_{\alpha/2} + z_\beta\right)^2 \left(p_1\left(1-p_1\right) + p_2\left(1-p_2\right)\right)}{\left(p_1 - p_2\right)^2}
 $$
 
 ````{prf:proof}
 The formula is derived by inverting the power equation for a two-sample z-test on proportions.
 
-Consider comparing proportions $p_1$ (control) and $p_2$ (treatment) with $n$ samples per group. The test statistic is:
+Consider comparing proportions $p_1$ (control) and $p_2$ (treatment) with $N$ samples per group. The test statistic is:
 
 $$
-Z = \frac{\hat{p}_2 - \hat{p}_1}{\sqrt{\frac{p_1\left(1-p_1\right)}{n} + \frac{p_2\left(1-p_2\right)}{n}}}
+Z = \frac{\hat{p}_2 - \hat{p}_1}{\sqrt{\frac{p_1\left(1-p_1\right)}{N} + \frac{p_2\left(1-p_2\right)}{N}}}
 $$
 
 Under $H_0: p_1 = p_2$, the test statistic follows $\mathcal{N}\left(0, 1\right)$. We reject when $|Z| > z_{\alpha/2}$.
@@ -55,10 +55,10 @@ Under $H_0: p_1 = p_2$, the test statistic follows $\mathcal{N}\left(0, 1\right)
 Under $H_1$, the true difference is $\delta = p_2 - p_1 \neq 0$ which shifts the distribution of $Z$.
 
 $$
-Z \sim \mathcal{N}\left(\frac{\delta}{\sqrt{\frac{p_1\left(1-p_1\right) + p_2\left(1-p_2\right)}{n}}},\; 1\right)
+Z \sim \mathcal{N}\left(\frac{\delta}{\sqrt{\frac{p_1\left(1-p_1\right) + p_2\left(1-p_2\right)}{N}}},\; 1\right)
 $$
 
-Let $s = \sqrt{\frac{p_1\left(1-p_1\right) + p_2\left(1-p_2\right)}{n}}$. Power is the probability that the shifted $Z$ falls in the rejection region.
+Let $s = \sqrt{\frac{p_1\left(1-p_1\right) + p_2\left(1-p_2\right)}{N}}$. Power is the probability that the shifted $Z$ falls in the rejection region.
 
 $$
 1 - \beta = \Phi\left(\frac{|\delta|}{s} - z_{\alpha/2}\right)
@@ -79,16 +79,16 @@ $$
 Substitute back the definition of $s$ and square both sides.
 
 $$
-\frac{p_1\left(1-p_1\right) + p_2\left(1-p_2\right)}{n} = \frac{\left(p_1 - p_2\right)^2}{\left(z_{\alpha/2} + z_\beta\right)^2}
+\frac{p_1\left(1-p_1\right) + p_2\left(1-p_2\right)}{N} = \frac{\left(p_1 - p_2\right)^2}{\left(z_{\alpha/2} + z_\beta\right)^2}
 $$
 
-Solving for $n$ yields the formula above.
+Solving for $N$ yields the formula above.
 ````
 
 Plugging in the numbers...
 
 $$
-n \approx \frac{\left(1.96 + 0.84\right)^2 \left(0.10 \times 0.90 + 0.11 \times 0.89\right)}{\left(0.01\right)^2} = \frac{7.84 \times 0.1879}{0.0001} \approx 14{,}731 \text{ per group}
+N \approx \frac{\left(1.96 + 0.84\right)^2 \left(0.10 \times 0.90 + 0.11 \times 0.89\right)}{\left(0.01\right)^2} = \frac{7.84 \times 0.1879}{0.0001} \approx 14{,}731 \text{ per group}
 $$
 
 So we need roughly 14,700 users in each of the control and treatment groups (or 29,400 total). If the site gets 2,000 eligible users per day, the experiment would need to run for about 15 days.

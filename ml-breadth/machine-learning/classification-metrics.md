@@ -1,18 +1,20 @@
 # Classification Metrics
 
+Let $\hat{y}$ be the predicted value and $y$ be the actual value. Let $\#\left[\cdot\right]$ be the count of instances that satisfy the condition.
+
 ## Confusion matrix
 
 ````{prf:definition} Confusion matrix
 :label: confusion-matrix
 
-Let $\hat{y}$ be the predicted value and $y$ be the actual value. The **confusion matrix** is a table that counts the number of instances for each combination of $\hat{y}$ and $y$. The rows are the predicted value and the columns are the actual value.
+The **confusion matrix** is a table that counts the number of instances for each combination of $\hat{y}$ and $y$. The rows are the predicted value and the columns are the actual value.
 
 $$
 C_{ij} = \#\left[\hat{y} = i \land y = j\right]
 $$
 ````
 
-For binary classification, the confusion matrix is 2x2. Let $y, \hat{y} \in \{0, 1\}$ and $\#\left[\cdot\right]$ be the count of instances that satisfy the condition. Then the confusion matrix is
+For binary classification, the confusion matrix is 2x2. Let $y, \hat{y} \in \{0, 1\}$. Then the confusion matrix is
 
 $$
 C =

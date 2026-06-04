@@ -6,22 +6,22 @@ Given a sequence of independent and identically distributed (iid) random variabl
 
 ````{prf:theorem} Central Limit Theorem
 :label: central-limit-theorem
-Let $(X_n)$ be a sequence of iid random variables with mean $\mu$ and variance $\sigma^2$. Then, as $n \to \infty$, the distribution of $\sqrt{n}\left(\bar{X} - \mu\right)$, where
+Let $(X_i)$ be a sequence of iid random variables with mean $\mu$ and variance $\sigma^2$. Then, as $N \to \infty$, the distribution of $\sqrt{N}\left(\bar{X} - \mu\right)$, where
 
 $$
-\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i
+\bar{X} = \frac{1}{N} \sum_{i=1}^N X_i
 $$
 
 is the sample average, converges in distribution to a Normal distribution with mean $0$ and variance $\sigma^2$.
 
 $$
-\sqrt{n}\left(\bar{X} - \mu\right) \xrightarrow{d} \mathcal{N}\left(0, \sigma^2\right)
+\sqrt{N}\left(\bar{X} - \mu\right) \xrightarrow{d} \mathcal{N}\left(0, \sigma^2\right)
 $$
 
-Another way to write this is that the sample average $\bar{X}$ converges in distribution to a Normal distribution with mean $\mu$ and variance $\sigma^2 / n$:
+Another way to write this is that the sample average $\bar{X}$ converges in distribution to a Normal distribution with mean $\mu$ and variance $\sigma^2 / N$:
 
 $$
-\bar{X} \xrightarrow{d} \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)
+\bar{X} \xrightarrow{d} \mathcal{N}\left(\mu, \frac{\sigma^2}{N}\right)
 $$
 ````
 

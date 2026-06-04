@@ -10,7 +10,7 @@ Let $\hat{y}$ be the predicted value and $y$ be the actual value.
 **Mean squared error (MSE)** is the average of the squared differences between the predictions and true values across the dataset.
 
 $$
-MSE = \frac{1}{n} \sum_{i=1}^{n} \left(\hat{y}_i - y_i\right)^2
+MSE = \frac{1}{N} \sum_{i=1}^{N} \left(\hat{y}_i - y_i\right)^2
 $$
 ````
 
@@ -24,7 +24,7 @@ MSE is sensitive to outliers due to the quadratic scaling of residuals $\hat{y} 
 **Root mean squared error (RMSE)** is the square root of MSE.
 
 $$
-RMSE = \sqrt{MSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left(\hat{y}_i - y_i\right)^2}
+RMSE = \sqrt{MSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left(\hat{y}_i - y_i\right)^2}
 $$
 ````
 
@@ -36,7 +36,7 @@ $$
 **Mean absolute error (MAE)** is the average of the absolute differences between the predictions and true values across the dataset.
 
 $$
-MAE = \frac{1}{n} \sum_{i=1}^{n} |\hat{y}_i - y_i|
+MAE = \frac{1}{N} \sum_{i=1}^{N} |\hat{y}_i - y_i|
 $$
 ````
 
@@ -53,7 +53,7 @@ MAE is preferred over MSE when less sensitivity to outliers is desired and easie
 **Mean absolute percentage error (MAPE)** is the average of the relative errors between the predictions and true values across the dataset.
 
 $$
-MAPE = \frac{1}{n} \sum_{i=1}^{n} \frac{|\hat{y}_i - y_i|}{|y_i|}
+MAPE = \frac{1}{N} \sum_{i=1}^{N} \frac{|\hat{y}_i - y_i|}{|y_i|}
 $$
 ````
 
@@ -62,7 +62,7 @@ Despite its name, MAPE is unbounded. MAPE penalizes overestimations more than un
 One variant of MAPE is to weight the error by the true value, as mispredictions on larger true values may be more consequential than mispredictions on smaller true values.
 
 $$
-\text{Weighted MAPE} = \frac{\sum_{i=1}^{n} |y_i| \cdot \frac{|\hat{y}_i - y_i|}{|y_i|}}{\sum_{i=1}^{n} |y_i|} = \frac{\sum_{i=1}^{n} |\hat{y}_i - y_i|}{\sum_{i=1}^{n} |y_i|}
+\text{Weighted MAPE} = \frac{\sum_{i=1}^{N} |y_i| \cdot \frac{|\hat{y}_i - y_i|}{|y_i|}}{\sum_{i=1}^{N} |y_i|} = \frac{\sum_{i=1}^{N} |\hat{y}_i - y_i|}{\sum_{i=1}^{N} |y_i|}
 $$
 
 ## Symmetric mean absolute percentage error
@@ -73,7 +73,7 @@ $$
 **Symmetric mean absolute percentage error (SMAPE)** is the average of the relative errors between the predictions and true values, normalized by both the prediction and true value, across the dataset.
 
 $$
-SMAPE = \frac{100}{n} \sum_{i=1}^{n} \frac{|\hat{y}_i - y_i|}{|\hat{y}_i| + |y_i|}
+SMAPE = \frac{100}{N} \sum_{i=1}^{N} \frac{|\hat{y}_i - y_i|}{|\hat{y}_i| + |y_i|}
 $$
 ````
 
@@ -84,10 +84,10 @@ Unlike MAPE, SMAPE has a lower bound (0) and upper bound (100). Like MAPE, SMAPE
 ````{prf:definition} Coefficient of determination
 :label: r-squared
 
-The **coefficient of determination ($R^2$)** measures the proportion of variance in the target explained by the model. Let $\bar{y} = \frac{1}{n}\sum_{i=1}^{n} y_i$ be the mean of the true values.
+The **coefficient of determination ($R^2$)** measures the proportion of variance in the target explained by the model. Let $\bar{y} = \frac{1}{N}\sum_{i=1}^{N} y_i$ be the mean of the true values.
 
 $$
-R^2 = 1 - \frac{\sum_{i=1}^{n} \left(\hat{y}_i - y_i\right)^2}{\sum_{i=1}^{n} \left(\bar{y} - y_i\right)^2} = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}}
+R^2 = 1 - \frac{\sum_{i=1}^{N} \left(\hat{y}_i - y_i\right)^2}{\sum_{i=1}^{N} \left(\bar{y} - y_i\right)^2} = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}}
 $$
 ````
 
@@ -105,10 +105,10 @@ A key limitation is that $R^2$ never decreases when adding features, even irrele
 ````{prf:definition} Adjusted $R^2$
 :label: adjusted-r-squared
 
-**Adjusted $R^2$** penalizes $R^2$ for the number of features $p$ relative to the number of observations $n$.
+**Adjusted $R^2$** penalizes $R^2$ for the number of features $p$ relative to the number of observations $N$.
 
 $$
-R^2_{\text{adj}} = 1 - \frac{\left(1 - R^2\right)\left(n - 1\right)}{n - p - 1}
+R^2_{\text{adj}} = 1 - \frac{\left(1 - R^2\right)\left(N - 1\right)}{N - p - 1}
 $$
 ````
 
