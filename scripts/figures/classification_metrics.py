@@ -37,9 +37,9 @@ def generate_precision_recall_ap():
 
     fig, ax = plt.subplots(figsize=(7, 5))
 
-    ax.step(recall, precision, where="post", color="steelblue", linewidth=2,
+    ax.step(recall, precision, where="post", color="tab:blue", linewidth=2,
             label=f"PR curve (AP = {ap:.2f})")
-    ax.fill_between(recall, precision, step="post", alpha=0.25, color="steelblue",
+    ax.fill_between(recall, precision, step="post", alpha=0.25, color="tab:blue",
                     label="Average precision area")
 
     ax.set_xlabel("Recall", fontsize=12)
@@ -61,11 +61,11 @@ def generate_roc_auc():
 
     fig, ax = plt.subplots(figsize=(7, 5))
 
-    ax.plot(fpr, tpr, color="steelblue", linewidth=2,
+    ax.plot(fpr, tpr, color="tab:blue", linewidth=2,
             label=f"ROC curve (AUC = {auc:.2f})")
-    ax.fill_between(fpr, tpr, alpha=0.25, color="steelblue",
+    ax.fill_between(fpr, tpr, alpha=0.25, color="tab:blue",
                     label="AUC area")
-    ax.plot([0, 1], [0, 1], color="grey", linestyle="--", linewidth=1,
+    ax.plot([0, 1], [0, 1], color="tab:gray", linestyle="--", linewidth=1,
             label="Random classifier")
 
     ax.set_xlabel("False Positive Rate", fontsize=12)

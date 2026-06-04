@@ -22,10 +22,10 @@ def generate_mse_vs_mae():
 
     fig, (ax_scatter, ax_sweep) = plt.subplots(1, 2, figsize=(13, 5))
 
-    ax_scatter.scatter(x, y_true, color="steelblue", s=40, zorder=3)
-    ax_scatter.plot(x, y_pred, color="grey", linewidth=2, label="Fit")
+    ax_scatter.scatter(x, y_true, color="tab:blue", s=40, zorder=3)
+    ax_scatter.plot(x, y_pred, color="tab:gray", linewidth=2, label="Fit")
     for i in range(n):
-        color = "firebrick" if i == outlier_idx else "steelblue"
+        color = "tab:red" if i == outlier_idx else "tab:blue"
         alpha = 0.8 if i == outlier_idx else 0.3
         lw = 2 if i == outlier_idx else 1
         ax_scatter.plot([x[i], x[i]], [y_true[i], y_pred[i]],
@@ -37,7 +37,7 @@ def generate_mse_vs_mae():
                         xy=(0.03, 0.95), xycoords="axes fraction",
                         fontsize=11, verticalalignment="top",
                         bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
-                                  edgecolor="grey", alpha=0.9))
+                                  edgecolor="tab:gray", alpha=0.9))
     ax_scatter.set_title("Residuals with one outlier (red)")
     ax_scatter.set_xlabel("$x$", fontsize=12)
     ax_scatter.set_ylabel("$y$", fontsize=12)
@@ -52,9 +52,9 @@ def generate_mse_vs_mae():
         mse_values.append(np.mean(residuals ** 2))
         mae_values.append(np.mean(np.abs(residuals)))
 
-    ax_sweep.plot(outlier_magnitudes, mse_values, color="steelblue", linewidth=2,
+    ax_sweep.plot(outlier_magnitudes, mse_values, color="tab:blue", linewidth=2,
                   label="MSE (quadratic)")
-    ax_sweep.plot(outlier_magnitudes, mae_values, color="darkorange", linewidth=2,
+    ax_sweep.plot(outlier_magnitudes, mae_values, color="tab:orange", linewidth=2,
                   label="MAE (linear)")
     ax_sweep.set_title("MSE grows quadratically; MAE grows linearly")
     ax_sweep.set_xlabel("Outlier magnitude", fontsize=12)
@@ -87,15 +87,15 @@ def generate_r_squared():
 
     for i in range(n):
         ax_tot.plot([x[i], x[i]], [y_bar, y_true[i]],
-                    color="steelblue", linewidth=1.5, alpha=0.5)
-    ax_tot.scatter(x, y_true, color="steelblue", s=40, zorder=3)
-    ax_tot.axhline(y_bar, color="grey", linestyle="--", linewidth=1.5,
+                    color="tab:blue", linewidth=1.5, alpha=0.5)
+    ax_tot.scatter(x, y_true, color="tab:blue", s=40, zorder=3)
+    ax_tot.axhline(y_bar, color="tab:gray", linestyle="--", linewidth=1.5,
                    label=f"Mean ($\\bar{{y}}$ = {y_bar:.1f})")
     ax_tot.annotate(f"$SS_{{\\mathrm{{tot}}}}$ = {ss_tot:.0f}",
                     xy=(0.03, 0.95), xycoords="axes fraction",
                     fontsize=12, verticalalignment="top",
                     bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
-                              edgecolor="grey", alpha=0.9))
+                              edgecolor="tab:gray", alpha=0.9))
     ax_tot.set_title("Total variance: deviations from the mean")
     ax_tot.set_xlabel("$x$", fontsize=12)
     ax_tot.set_ylabel("$y$", fontsize=12)
@@ -105,16 +105,16 @@ def generate_r_squared():
 
     for i in range(n):
         ax_res.plot([x[i], x[i]], [y_pred[i], y_true[i]],
-                    color="steelblue", linewidth=1.5, alpha=0.5)
-    ax_res.scatter(x, y_true, color="steelblue", s=40, zorder=3)
-    ax_res.plot(x, y_pred, color="darkorange", linewidth=2, label="Fit")
+                    color="tab:blue", linewidth=1.5, alpha=0.5)
+    ax_res.scatter(x, y_true, color="tab:blue", s=40, zorder=3)
+    ax_res.plot(x, y_pred, color="tab:orange", linewidth=2, label="Fit")
     ax_res.annotate(
         f"$SS_{{\\mathrm{{res}}}}$ = {ss_res:.0f}\n"
         f"$R^2 = 1 - \\frac{{{ss_res:.0f}}}{{{ss_tot:.0f}}} = {r2:.2f}$",
         xy=(0.03, 0.95), xycoords="axes fraction",
         fontsize=12, verticalalignment="top",
         bbox=dict(boxstyle="round,pad=0.5", facecolor="white",
-                  edgecolor="grey", alpha=0.9))
+                  edgecolor="tab:gray", alpha=0.9))
     ax_res.set_title("Residual variance: deviations from the fit")
     ax_res.set_xlabel("$x$", fontsize=12)
     ax_res.set_ylabel("$y$", fontsize=12)

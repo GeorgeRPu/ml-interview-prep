@@ -51,11 +51,11 @@ def generate_calibration_comparison():
 
     fig, (ax_map, ax_rel) = plt.subplots(1, 2, figsize=(13, 5))
 
-    ax_map.plot([0, 1], [0, 1], color="grey", linestyle="--", linewidth=1,
+    ax_map.plot([0, 1], [0, 1], color="tab:gray", linestyle="--", linewidth=1,
                 label="Identity (no rescaling)")
-    ax_map.plot(grid, platt_mapping, color="steelblue", linewidth=2,
+    ax_map.plot(grid, platt_mapping, color="tab:blue", linewidth=2,
                 label="Platt scaling (sigmoid)")
-    ax_map.plot(grid, isotonic_mapping, color="darkorange", linewidth=2,
+    ax_map.plot(grid, isotonic_mapping, color="tab:orange", linewidth=2,
                 label="Isotonic regression (step)")
     ax_map.set_title("Learned calibration map")
     ax_map.set_xlabel("Raw classifier score", fontsize=12)
@@ -76,13 +76,13 @@ def generate_calibration_comparison():
         y_test, isotonic_test, n_bins=n_bins, strategy="quantile",
     )
 
-    ax_rel.plot([0, 1], [0, 1], color="grey", linestyle="--", linewidth=1,
+    ax_rel.plot([0, 1], [0, 1], color="tab:gray", linestyle="--", linewidth=1,
                 label="Perfectly calibrated")
-    ax_rel.plot(mean_uncal, frac_uncal, marker="o", color="firebrick",
+    ax_rel.plot(mean_uncal, frac_uncal, marker="o", color="tab:red",
                 linewidth=2, label="Uncalibrated")
-    ax_rel.plot(mean_platt, frac_platt, marker="o", color="steelblue",
+    ax_rel.plot(mean_platt, frac_platt, marker="o", color="tab:blue",
                 linewidth=2, label="Platt scaling")
-    ax_rel.plot(mean_iso, frac_iso, marker="o", color="darkorange",
+    ax_rel.plot(mean_iso, frac_iso, marker="o", color="tab:orange",
                 linewidth=2, label="Isotonic regression")
     ax_rel.set_title("Reliability diagram")
     ax_rel.set_xlabel("Mean predicted probability", fontsize=12)

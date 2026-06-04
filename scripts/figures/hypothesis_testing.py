@@ -20,19 +20,19 @@ def generate_power():
 
     fig, ax = plt.subplots(figsize=(10, 4.5))
 
-    ax.plot(x, y_null, color="steelblue", linewidth=2, label=r"$H_0$: $Z \sim \mathcal{N}(0, 1)$")
-    ax.plot(x, y_alt, color="darkorange", linewidth=2,
+    ax.plot(x, y_null, color="tab:blue", linewidth=2, label=r"$H_0$: $Z \sim \mathcal{N}(0, 1)$")
+    ax.plot(x, y_alt, color="tab:orange", linewidth=2,
             label=rf"$H_1$: $Z \sim \mathcal{{N}}({delta}, 1)$")
 
     # Rejection region (right tail) — shade under H1 to show power
     x_reject = np.linspace(z_crit, x[-1], 500)
     ax.fill_between(x_reject, norm.pdf(x_reject, delta, sigma),
-                    alpha=0.4, color="darkorange", label="Power ($1 - \\beta$)")
+                    alpha=0.4, color="tab:orange", label="Power ($1 - \\beta$)")
 
     # Beta region — area under H1 that falls outside the rejection region
     x_beta = np.linspace(x[0], z_crit, 500)
     ax.fill_between(x_beta, norm.pdf(x_beta, delta, sigma),
-                    alpha=0.25, color="grey", label=r"$\beta$ (Type II error)")
+                    alpha=0.25, color="tab:gray", label=r"$\beta$ (Type II error)")
 
     # Critical value line
     ax.axvline(z_crit, color="black", linestyle="--", linewidth=1)
@@ -60,7 +60,7 @@ def generate_t_vs_normal():
 
     fig, ax = plt.subplots(figsize=(10, 4.5))
 
-    ax.plot(x, norm.pdf(x), color="steelblue", linewidth=2.5,
+    ax.plot(x, norm.pdf(x), color="tab:blue", linewidth=2.5,
             label=r"$\mathcal{N}(0,1)$")
 
     for df, color in zip(dfs, colors):

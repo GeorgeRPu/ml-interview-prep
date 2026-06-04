@@ -31,7 +31,7 @@ def generate_precision_recall_at_k():
 
     fig, (ax_list, ax_curve) = plt.subplots(1, 2, figsize=(13, 5))
 
-    colors = ["steelblue" if r else "grey" for r in relevance]
+    colors = ["tab:blue" if r else "tab:gray" for r in relevance]
     ax_list.barh(ks, np.ones(n), color=colors, edgecolor="white", height=0.6)
     ax_list.set_yticks(ks)
     ax_list.set_yticklabels([f"Item {i}" for i in ks], fontsize=10)
@@ -42,13 +42,13 @@ def generate_precision_recall_at_k():
     for i, r in enumerate(relevance):
         label = "Relevant" if r else "Non-relevant"
         ax_list.text(1.05, i + 1, label, va="center", fontsize=10,
-                     color="steelblue" if r else "grey", fontweight="bold")
+                     color="tab:blue" if r else "tab:gray", fontweight="bold")
 
     ax_list.set_title("Ranked list with 4 relevant items")
 
-    ax_curve.plot(ks, precision, color="steelblue", marker="o", linewidth=2,
+    ax_curve.plot(ks, precision, color="tab:blue", marker="o", linewidth=2,
                   markersize=7, label="Precision@k", zorder=3)
-    ax_curve.plot(ks, recall, color="darkorange", marker="o", linewidth=2,
+    ax_curve.plot(ks, recall, color="tab:orange", marker="o", linewidth=2,
                   markersize=7, label="Recall@k", zorder=3)
     ax_curve.set_xlabel("$k$", fontsize=12)
     ax_curve.set_ylabel("Metric value", fontsize=12)
@@ -68,8 +68,8 @@ def generate_ap_comparison():
     fig, (ax_good, ax_poor) = plt.subplots(1, 2, figsize=(13, 5))
 
     for ax, relevance, color in [
-        (ax_good, good, "steelblue"),
-        (ax_poor, poor, "darkorange"),
+        (ax_good, good, "tab:blue"),
+        (ax_poor, poor, "tab:orange"),
     ]:
         ap, precision, recall = _compute_ap(relevance)
 
@@ -119,18 +119,18 @@ def generate_dcg_ndcg():
 
     fig, (ax_bars, ax_cum) = plt.subplots(1, 2, figsize=(13, 5))
 
-    ax_bars.bar(positions, discounted_gains, color="steelblue", edgecolor="white",
+    ax_bars.bar(positions, discounted_gains, color="tab:blue", edgecolor="white",
                 width=0.6, label="Discounted gain", zorder=3)
     for i, (dg, r) in enumerate(zip(discounted_gains, relevance)):
         if dg > 0:
             ax_bars.text(positions[i], dg + 0.15, f"$R={int(r)}$",
-                         ha="center", fontsize=9, color="steelblue")
+                         ha="center", fontsize=9, color="tab:blue")
 
     ax_disc = ax_bars.twinx()
-    ax_disc.plot(positions, 1.0 / discounts, color="grey", linestyle="--",
+    ax_disc.plot(positions, 1.0 / discounts, color="tab:gray", linestyle="--",
                  linewidth=2, marker="o", markersize=5, label="Discount $1/\\log_2(i+1)$")
-    ax_disc.set_ylabel("Discount factor", fontsize=12, color="grey")
-    ax_disc.tick_params(axis="y", colors="grey")
+    ax_disc.set_ylabel("Discount factor", fontsize=12, color="tab:gray")
+    ax_disc.tick_params(axis="y", colors="tab:gray")
     ax_disc.set_ylim(0, 1.15)
 
     ax_bars.set_xlabel("Rank position $i$", fontsize=12)
@@ -145,17 +145,17 @@ def generate_dcg_ndcg():
 
     ax_bars.set_title("Per-position discounted gain with discount curve")
 
-    ax_cum.plot(positions, cum_idcg, color="darkorange", linewidth=2, marker="o",
+    ax_cum.plot(positions, cum_idcg, color="tab:orange", linewidth=2, marker="o",
                 markersize=6, label=f"Ideal DCG ({cum_idcg[-1]:.2f})", zorder=3)
-    ax_cum.plot(positions, cum_dcg, color="steelblue", linewidth=2, marker="o",
+    ax_cum.plot(positions, cum_dcg, color="tab:blue", linewidth=2, marker="o",
                 markersize=6, label=f"Actual DCG ({cum_dcg[-1]:.2f})", zorder=3)
-    ax_cum.fill_between(positions, cum_dcg, cum_idcg, alpha=0.15, color="grey")
+    ax_cum.fill_between(positions, cum_dcg, cum_idcg, alpha=0.15, color="tab:gray")
 
     ax_cum.annotate(f"nDCG@{n} = {ndcg:.2f}",
                     xy=(0.97, 0.05), xycoords="axes fraction",
                     fontsize=12, ha="right", va="bottom",
                     bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
-                              edgecolor="grey", alpha=0.9))
+                              edgecolor="tab:gray", alpha=0.9))
 
     ax_cum.set_xlabel("$k$", fontsize=12)
     ax_cum.set_ylabel("Cumulative DCG", fontsize=12)
