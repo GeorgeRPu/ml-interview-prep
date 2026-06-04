@@ -3,6 +3,7 @@
 ## Z-test
 
 ````{prf:definition} Z-test
+:label: z-test
 The z-test tests whether a sample mean differs from a hypothesized population mean. It requires that the population standard deviation $\sigma$ be known or $n$ is large enough that you can use the sample standard deviation ($n \geq 30$).
 
 $$
@@ -13,6 +14,7 @@ $$
 ## t-test
 
 ````{prf:definition} t-test
+:label: t-test
 The t-test tests whether a sample mean differs from a hypothesized population mean when the population standard deviation is *unknown* and estimated from the sample. The test statistic follows a t-distribution with $n-1$ degrees of freedom.
 
 $$
@@ -37,6 +39,7 @@ The denominator is $n-1$ rather than $n$ due to **Bessel's correction**. Dividin
 The two-sample t-test compares the means of two independent groups to determine if they are different.
 
 ````{prf:definition} Equal-variance (Student's) Two-sample t-test
+:label: equal-variance-students-two-sample-t-test
 The equal-variance (Student's) two-sample t-test assumes both groups share the same variance $\sigma_1^2 = \sigma_2^2$. The test statistic uses a pooled variance estimate.
 
 $$
@@ -47,6 +50,7 @@ where $s_p^2$ is the pooled variance and the test statistic follows a t-distribu
 ````
 
 ````{prf:definition} Welch's t-test
+:label: welchs-t-test
 Welch's t-test is a variation of the two-sample t-test that, instead of assuming equal variances, each group's variance is estimated separately.
 
 $$
@@ -65,6 +69,7 @@ Welch's t-test is generally preferred over the equal-variance version because it
 ## Paired t-test
 
 ````{prf:definition} Paired t-test
+:label: paired-t-test
 A **paired t-test** is used when the two samples are not independent but consist of matched pairs (e.g., the same user's behavior before and after a change). The test reduces to a one-sample t-test on the differences $d_i = X_{1,i} - X_{2,i}$.
 
 $$
@@ -77,6 +82,7 @@ The paired test is more powerful than the unpaired test when within-pair correla
 ## Chi-squared test
 
 ````{prf:definition} Chi-squared Test
+:label: chi-squared-test
 The **chi-squared test** compares observed categorical frequencies to expected frequencies. Let $O_i$ be the observed count for category $i$ and $E_i$ be the expected count under the null hypothesis.
 
 $$

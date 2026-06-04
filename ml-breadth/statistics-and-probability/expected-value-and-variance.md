@@ -5,6 +5,7 @@
 The **expected value** is the weighted average of all possible values of a random variable.
 
 ````{prf:definition} Expected Value
+:label: expected-value
 Let $X$ be a random variable. The expected value of $X$ is
 
 $$
@@ -31,6 +32,7 @@ $$
 **Variance** measures the spread of a distribution around its mean.
 
 ````{prf:definition} Variance
+:label: statistical-variance
 Let $X$ be a random variable with mean $\mu$. The variance of $X$ is
 
 $$
@@ -51,6 +53,7 @@ $$
 **Covariance** measures the joint variability of two random variables.
 
 ````{prf:definition} Covariance
+:label: covariance
 Let $X$ and $Y$ be random variables with means $\mu_X$ and $\mu_Y$. The covariance of $X$ and $Y$ is
 
 $$
@@ -62,6 +65,7 @@ $$
 
 
 ````{prf:definition} Correlation
+:label: correlation
 The correlation coefficient $\rho\left(X, Y\right)$ is defined as
 
 $$

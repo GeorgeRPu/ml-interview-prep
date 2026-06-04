@@ -3,6 +3,7 @@
 ## Bernoulli distribution
 
 ````{prf:definition} Bernoulli Distribution
+:label: bernoulli-distribution
 The **Bernoulli distribution** models a single binary experiment—outcome is 0 or 1—with success probability $p$.
 
 $$
@@ -20,6 +21,7 @@ $$
 ## Binomial distribution
 
 ````{prf:definition} Binomial Distribution
+:label: binomial-distribution
 The **binomial distribution** counts the number of successes in $n$ independent Bernoulli trials.
 
 $$
@@ -38,6 +40,7 @@ As the number of trials $n$ increases, the binomial distribution approaches a no
 ## Geometric distribution
 
 ````{prf:definition} Geometric Distribution
+:label: geometric-distribution
 The **geometric distribution** counts the number of trials until the first success.
 
 $$
@@ -56,6 +59,7 @@ The geometric distribution is memoryless: $\Pr\left(X > m + n \mid X > m\right) 
 ## Poisson distribution
 
 ````{prf:definition} Poisson Distribution
+:label: poisson-distribution
 The **Poisson distribution** counts the number of events in a fixed interval, given a rate $\lambda$.
 
 $$

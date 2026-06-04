@@ -114,6 +114,7 @@ $$
 There are corrections to control the family-wise error rate (FWER)—the probability of making at least one false positive across all $m$ tests—or the false discovery rate (FDR)—the expected proportion of rejected hypotheses that are false positives—when performing multiple comparisons.
 
 ````{prf:definition} Bonferroni Correction
+:label: bonferroni-correction
 The **Bonferroni correction** controls sets the per-test significance level to
 
 $$
@@ -126,6 +127,7 @@ to keep the overall FWER at $\alpha$.
 Bonferroni is simple but conservative. As $m$ grows, $\alpha'$ becomes very small and power drops, making it hard to detect real effects.
 
 ````{prf:definition} Benjamini-Hochberg Procedure
+:label: benjamini-hochberg-procedure
 Given $m$ tests, the **Benjamini-Hochberg (BH) procedure** is as follows:
 
 1. Sort the p-values in ascending order: $p_{\left(1\right)} \leq p_{\left(2\right)} \leq \cdots \leq p_{\left(m\right)}$.

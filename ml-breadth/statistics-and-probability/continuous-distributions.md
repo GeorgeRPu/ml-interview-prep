@@ -3,6 +3,7 @@
 ## Uniform distribution
 
 ````{prf:definition} Uniform Distribution
+:label: uniform-distribution
 The **uniform distribution** assigns equal probability to all values in $\left[a, b\right]$.
 
 $$
@@ -17,6 +18,7 @@ $$
 ## Normal (Gaussian) distribution
 
 ````{prf:definition} Normal (Gaussian) Distribution
+:label: normal-gaussian-distribution
 The **normal distribution** is a bell-shaped curve defined by its mean $\mu$ and variance $\sigma^2$.
 
 $$
@@ -33,6 +35,7 @@ The 68-95-99.7 rule says approximately 68%, 95%, and 99.7% of values lie within 
 ## Exponential distribution
 
 ````{prf:definition} Exponential Distribution
+:label: exponential-distribution
 The **exponential distribution** models the time between events in a Poisson process.
 
 $$

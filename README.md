@@ -23,6 +23,8 @@ uv run make html
 
 Open `_build/html/index.html` in your browser to preview locally.
 
+> **Drafts:** Markdown pages whose filename starts with an underscore (e.g. `_my-page.md`) are treated as drafts and excluded from the build. To publish one, drop the underscore prefix and link it from the relevant `index.md` toctree.
+
 ## 🧪 Testing GitHub Actions with `act`
 
 [`act`](https://github.com/nektos/act) lets you run the deploy workflow locally without pushing to GitHub.
@@ -54,6 +56,7 @@ Figures are saved to `_static/figures/`. The temperature residuals figure caches
 ```
 ml-interview-prep/
 ├── ml-breadth/             # ML breadth concept notes
+├── ml-coding/              # ML coding implementation problems
 ├── ml-system-design/       # ML system design case studies
 ├── scripts/                # Figure generation scripts
 │   └── figures/            # Grouped by topic
@@ -62,9 +65,8 @@ ml-interview-prep/
 ├── _build/                 # Build output (gitignored)
 ├── conf.py                 # Sphinx configuration
 ├── index.rst               # Documentation homepage
-├── ml-coding.rst           # ML coding section
 ├── Makefile                # Build automation
 └── pyproject.toml          # Project metadata and dependencies
 ```
 
-Each topic in `ml-breadth/` and `ml-system-design/` is a standalone `.md` file containing concept explanations, worked examples, and mathematical derivations rendered with MyST and sphinx-proof.
+Each topic in `ml-breadth/` and `ml-system-design/` is a standalone `.md` file containing concept explanations, worked examples, and mathematical derivations rendered with MyST and sphinx-proof. Each problem in `ml-coding/` follows a problem statement, approach, complexity, and reference solution structure.

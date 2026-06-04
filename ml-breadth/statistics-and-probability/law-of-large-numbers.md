@@ -5,6 +5,7 @@
 The law of large numbers (LLN) says that as we collect more data, the sample mean gets closer to the true population mean. It is one of the foundational theorems in probability and statistics, and it justifies using sample averages as estimates of expected values.
 
 ````{prf:theorem} Law of Large Numbers
+:label: law-of-large-numbers
 Let $X_1, X_2, \dots$ be independent and identically distributed (iid) random variables with mean $\mu$. Then the sample mean $\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i$ converges in probability to $\mu$ as $n \to \infty$.
 
 $$

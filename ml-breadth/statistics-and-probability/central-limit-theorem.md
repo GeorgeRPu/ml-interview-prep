@@ -5,6 +5,7 @@
 Given a sequence of independent and identically distributed (iid) random variables, the Central Limit Theorem (CLT) states that sample average converges in distribution to a Normal distribution, regardless of the original distribution of the individual variables.
 
 ````{prf:theorem} Central Limit Theorem
+:label: central-limit-theorem
 Let $(X_n)$ be a sequence of iid random variables with mean $\mu$ and variance $\sigma^2$. Then, as $n \to \infty$, the distribution of $\sqrt{n}\left(\bar{X} - \mu\right)$, where
 
 $$

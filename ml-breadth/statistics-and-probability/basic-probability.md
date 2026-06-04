@@ -3,6 +3,7 @@
 ## What is conditional probability?
 
 ````{prf:definition} Conditional Probability
+:label: conditional-probability
 The conditional probability $\Pr\left(A \mid B\right)$ is the probability of event $A$ given that event $B$ has occurred.
 
 $$
@@ -15,6 +16,7 @@ $$
 Two events $A$ and $B$ are **independent** if the occurrence of one does not affect the probability of the other.
 
 ````{prf:definition} Independence
+:label: independence
 Events $A$ and $B$ are independent if
 
 $$
@@ -31,6 +33,7 @@ $$
 ## What is the chain rule of probability?
 
 ````{prf:definition} Chain Rule of Probability
+:label: chain-rule-of-probability
 For events $A$ and $B$,
 
 $$
@@ -47,6 +50,7 @@ $$
 ## What is the law of total probability?
 
 ````{prf:definition} Law of Total Probability
+:label: law-of-total-probability
 If $B_1, B_2, \dots, B_n$ is a partition of the sample space, then
 
 $$

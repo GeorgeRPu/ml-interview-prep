@@ -29,6 +29,7 @@ machine-learning/data-splitting
 machine-learning/overfitting-and-underfitting
 machine-learning/bias-variance-tradeoff
 machine-learning/classification-metrics
+machine-learning/regression-metrics
 machine-learning/calibration
 machine-learning/imbalanced-data
 machine-learning/regularization
@@ -48,4 +49,11 @@ deep-learning/transformers
 
 nlp/text-normalization
 nlp/tokenization
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Retrieval, Ranking & Recommendations
+
+retrieval-ranking-and-recommendations/ranking-metrics
 ```

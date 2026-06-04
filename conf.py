@@ -22,7 +22,16 @@ bibtex_default_style = "alpha"
 bibtex_reference_style = "author_year"
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv']
+
+# Markdown pages whose filename starts with an underscore are treated as
+# drafts and excluded from the build, so work-in-progress pages don't break
+# the build or appear in the rendered docs. Drop the underscore prefix and
+# link the page from an index.md toctree to publish it.
+exclude_patterns = [
+    '_build', 'Thumbs.db', '.DS_Store', '.venv', '**/_*.md',
+    # Repo files (GitHub readme, agent instructions), not documentation pages.
+    'README.md', 'AGENTS.md', 'CLAUDE.md',
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

@@ -14,6 +14,7 @@ The general procedure for hypothesis testing is:
 ## Null and alternative hypotheses
 
 ````{prf:definition} Null and Alternative Hypotheses
+:label: null-and-alternative-hypotheses
 The **null hypothesis** $H_0$ is the default assumption, e.g. "there is no difference" or "the coin is fair."
 
 The **alternative hypothesis** $H_1$ is what we want to provide evidence for, e.g. "there is a difference" or "the coin is biased."
@@ -22,6 +23,7 @@ The **alternative hypothesis** $H_1$ is what we want to provide evidence for, e.
 ## What are Type I and Type II errors?
 
 ````{prf:definition} Type I and Type II Errors
+:label: type-i-and-type-ii-errors
 A **Type I error** (false positive) is rejecting $H_0$ when it is true. Its probability is $\alpha$.
 
 A **Type II error** (false negative) is failing to reject $H_0$ when $H_1$ is true. Its probability is $\beta$.
@@ -30,6 +32,7 @@ A **Type II error** (false negative) is failing to reject $H_0$ when $H_1$ is tr
 ## p-value
 
 ````{prf:definition} p-value
+:label: p-value
 The **p-value** is the probability of observing data at least as extreme as the observed data, assuming $H_0$ is true.
 
 $$
@@ -44,12 +47,14 @@ The p-value is NOT the probability that $H_0$ is true (that would be the posteri
 ## Significance level
 
 ````{prf:definition} Significance Level
+:label: significance-level
 The **significance level** $\alpha$ is the threshold for rejecting the null hypothesis. It is the maximum probability of a Type I error (false positive) that we are willing to tolerate. If $p < \alpha$, we reject $H_0$.
 ````
 
 ## Statistical power
 
 ````{prf:definition} Statistical Power
+:label: statistical-power
 **Statistical power** is the probability of correctly rejecting $H_0$ when $H_1$ is true.
 
 $$
