@@ -40,7 +40,7 @@ Precision@k and Recall@k have a few limitations as ranking metrics:
 Recall@k always increases as $k$ increases, making it less useful than Precision@k in some scenarios.
 
 ![Precision@k and Recall@k vs. k](/_static/figures/precision_recall_at_k.png)
-*For a ranked list with 4 relevant items (left), Precision@k fluctuates as $k$ grows while Recall@k increases monotonically (right). Precision drops each time a non-relevant item enters the top $k$.*
+*For a ranked list of 10 items with relevant items at positions 1, 3, 4, and 7 (relevance vector [1, 0, 1, 1, 0, 0, 1, 0, 0, 0]), Precision@k fluctuates as $k$ grows while Recall@k increases monotonically. Precision drops each time a non-relevant item enters the top $k$.*
 
 ## Average precision@k
 

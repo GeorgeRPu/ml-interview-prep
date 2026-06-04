@@ -29,22 +29,7 @@ def generate_precision_recall_at_k():
     ks = np.arange(1, n + 1)
     precision, recall = _precision_recall_at_k(relevance)
 
-    fig, (ax_list, ax_curve) = plt.subplots(1, 2, figsize=(13, 5))
-
-    colors = ["tab:blue" if r else "tab:gray" for r in relevance]
-    ax_list.barh(ks, np.ones(n), color=colors, edgecolor="white", height=0.6)
-    ax_list.set_yticks(ks)
-    ax_list.set_yticklabels([f"Item {i}" for i in ks], fontsize=10)
-    ax_list.invert_yaxis()
-    ax_list.set_xlim(0, 1.4)
-    ax_list.set_xticks([])
-
-    for i, r in enumerate(relevance):
-        label = "Relevant" if r else "Non-relevant"
-        ax_list.text(1.05, i + 1, label, va="center", fontsize=10,
-                     color="tab:blue" if r else "tab:gray", fontweight="bold")
-
-    ax_list.set_title("Ranked list with 4 relevant items")
+    fig, ax_curve = plt.subplots(figsize=(7, 5))
 
     ax_curve.plot(ks, precision, color="tab:blue", marker="o", linewidth=2,
                   markersize=7, label="Precision@k", zorder=3)
@@ -55,7 +40,7 @@ def generate_precision_recall_at_k():
     ax_curve.set_xticks(ks)
     ax_curve.set_ylim(-0.05, 1.1)
     ax_curve.grid(True, alpha=0.3)
-    ax_curve.set_title("Precision@k and Recall@k vs. $k$")
+    ax_curve.legend(fontsize=11, framealpha=0.9)
 
     plt.tight_layout()
     save(fig, "precision_recall_at_k")

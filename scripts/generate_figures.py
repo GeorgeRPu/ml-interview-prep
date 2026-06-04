@@ -4,6 +4,7 @@ Run from the repo root:  python -m scripts.generate_figures
 """
 
 from scripts.figures.calibration import generate_all as calibration
+from scripts.figures.dimensionality_reduction import generate_all as dimensionality
 from scripts.figures.classification_metrics import generate_all as classification
 from scripts.figures.continuous_distributions import generate_all as continuous
 from scripts.figures.discrete_distributions import generate_all as discrete
@@ -17,6 +18,7 @@ if __name__ == "__main__":
     print("Generating figures...")
     classification()
     calibration()
+    dimensionality()
     discrete()
     continuous()
     hypothesis()

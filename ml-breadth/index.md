@@ -34,6 +34,7 @@ machine-learning/calibration
 machine-learning/imbalanced-data
 machine-learning/regularization
 machine-learning/gradient-boosting
+machine-learning/dimensionality-reduction
 ```
 
 ```{toctree}

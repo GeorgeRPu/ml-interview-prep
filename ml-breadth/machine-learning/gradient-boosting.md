@@ -43,9 +43,9 @@ $$
 ```{prf:algorithm} Gradient Boosting
 :label: gradient-boosting-algorithm
 
-**Inputs** Training data $\left\{\left(x_i, y_i\right)\right\}_{i=1}^N$, differentiable loss function $L\left(y, F\left(x\right)\right)$, number of iterations $M$, learning rate $\eta$
+**Input:** Training data $\left\{\left(x_i, y_i\right)\right\}_{i=1}^N$, differentiable loss function $L\left(y, F\left(x\right)\right)$, number of iterations $M$, learning rate $\eta$
 
-**Output** Ensemble model $F_M\left(x\right)$
+**Output:** Ensemble model $F_M\left(x\right)$
 
 1. Initialize: $F_0\left(x\right) = \argmin_\gamma \sum_{i=1}^N L\left(y_i, \gamma\right)$
 2. For $m = 1$ to $M$:
