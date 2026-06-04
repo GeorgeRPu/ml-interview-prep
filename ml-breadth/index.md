@@ -31,6 +31,7 @@ machine-learning/bias-variance-tradeoff
 machine-learning/classification-metrics
 machine-learning/calibration
 machine-learning/imbalanced-data
+machine-learning/regularization
 machine-learning/gradient-boosting
 ```
 

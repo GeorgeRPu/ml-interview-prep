@@ -10,6 +10,7 @@ from scripts.figures.discrete_distributions import generate_all as discrete
 from scripts.figures.hypothesis_testing import generate_all as hypothesis
 from scripts.figures.ranking_metrics import generate_all as ranking
 from scripts.figures.regression_metrics import generate_all as regression
+from scripts.figures.regularization import generate_all as regularization
 from scripts.figures.temperature_residuals import generate_all as temperature
 
 if __name__ == "__main__":
@@ -21,5 +22,6 @@ if __name__ == "__main__":
     hypothesis()
     ranking()
     regression()
+    regularization()
     temperature()
     print("Done.")
